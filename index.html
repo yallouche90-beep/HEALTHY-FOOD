@@ -1,1 +1,1102 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Food - Alimentation Saine & Gourmande | Ebooks</title>
+    <meta name="description" content="Ebooks de recettes healthy avec les calories de chaque entrée, plat et dessert. Menus de Noël et du Nouvel An, batch cooking, pâtisseries sans sucre raffiné.">
+    <meta name="theme-color" content="#0B3D2E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23176B3A'/%3E%3Cpath d='M9 23c0-8 5-13 14-14 0 9-5 14-13 14z' fill='%23FFD43B'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --basilic:#176B3A; --basilic-fonce:#0F4F2A; --menthe:#E6F5EA;
+            --mandarine:#FF8A1F; --mandarine-pale:#FFEBD6;
+            --betterave:#D6336C; --rose-pale:#FFE3EC;
+            --citron:#FFD43B; --sapin:#0B3D2E; --sapin-clair:#145240; --or:#EBC66B;
+            --encre:#1D2A24; --gris:#53635B; --trait:#D9E5DD;
+        }
+        *,*::before,*::after{box-sizing:border-box}
+        html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:7rem}
+        body{margin:0;font-family:'Figtree',system-ui,sans-serif;font-size:1rem;line-height:1.55;color:var(--encre);background:#fff;-webkit-font-smoothing:antialiased}
+        h1,h2,h3,h4,p,ul,ol,figure{margin:0}
+        ul,ol{padding:0;list-style:none}
+        a{color:inherit;text-decoration:none}
+        button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+        input{font:inherit;color:inherit}
+        svg{display:block;flex:none}
+        [hidden]{display:none!important}
+        h1,h2,h3,h4{font-family:'Bricolage Grotesque','Figtree',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+        :focus-visible{outline:3px solid var(--mandarine);outline-offset:3px;border-radius:6px}
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+        .wrap{max-width:72rem;margin:0 auto;padding:0 1.25rem}
+        @media(min-width:640px){.wrap{padding:0 1.5rem}}
+
+        /* Boutons */
+        .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;border-radius:999px;padding:.9rem 1.5rem;transition:background-color .2s,transform .2s;text-align:center;line-height:1.2}
+        .btn:active{transform:scale(.98)}
+        .btn-primary{background:var(--basilic);color:#fff}
+        .btn-primary:hover{background:var(--basilic-fonce)}
+        .btn-primary:disabled{background:#b9c4bd;cursor:not-allowed}
+        .btn-festive{background:var(--sapin);color:var(--or)}
+        .btn-festive:hover{background:#082d22}
+        .btn-warm{background:var(--mandarine);color:var(--encre)}
+        .btn-warm:hover{background:#ff9b3f}
+        .btn-block{display:flex;width:100%}
+        .btn-small{padding:.65rem 1.1rem;font-size:.9rem}
+
+        /* Pastilles calories */
+        .kcal{display:inline-block;background:var(--citron);color:var(--encre);font-weight:800;border-radius:999px;padding:.2rem .7rem;font-size:.85rem;white-space:nowrap;line-height:1.4}
+
+        /* Bande festive du haut */
+        .topbar{background:var(--sapin);color:#fff;display:flex;align-items:stretch;font-size:.9rem;overflow:hidden}
+        .topbar-label{flex:none;display:flex;align-items:center;gap:.5rem;background:var(--mandarine);color:var(--encre);font-weight:800;padding:.6rem 1rem}
+        .ticker{flex:1;min-width:0;overflow:hidden;display:flex;align-items:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent)}
+        .ticker-track{display:flex;width:max-content;animation:tick 80s linear infinite}
+        .ticker:hover .ticker-track{animation-play-state:paused}
+        .tick{display:inline-flex;align-items:center;gap:.55rem;padding:0 1.4rem 0 0;white-space:nowrap}
+        .tick::after{content:"✦";color:var(--or);margin-left:.9rem}
+        .tick-type{color:var(--or);font-weight:700}
+        .tick .kcal{background:rgba(235,198,107,.18);color:var(--or);padding:.05rem .55rem;font-size:.8rem}
+        .topbar-cta{flex:none;display:flex;align-items:center;padding:.6rem 1rem;color:var(--or);font-weight:700;white-space:nowrap}
+        .topbar-cta:hover{text-decoration:underline;text-underline-offset:3px}
+        @keyframes tick{to{transform:translateX(-50%)}}
+        @media(max-width:720px){.topbar-cta{display:none}}
+        @media(prefers-reduced-motion:reduce){.ticker{overflow-x:auto}.ticker-track{animation:none}}
+
+        /* En-tête */
+        .site-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--trait)}
+        .header-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.25rem 1.5rem;padding-top:.7rem;padding-bottom:.7rem}
+        .logo{display:flex;align-items:center;gap:.7rem}
+        .logo-mark{width:2.6rem;height:2.6rem;border-radius:50%;background:var(--basilic);display:grid;place-items:center}
+        .logo-name{display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.3rem;line-height:1;letter-spacing:-.02em}
+        .logo-sub{display:block;font-size:.8rem;color:var(--basilic);font-weight:600}
+        .main-nav{display:flex;gap:1.6rem;font-weight:600;font-size:.95rem;color:var(--gris);order:3;width:100%;overflow-x:auto;padding:.35rem 0 .1rem;white-space:nowrap}
+        .main-nav a:hover{color:var(--basilic)}
+        .main-nav a.nav-festive{color:var(--betterave)}
+        @media(min-width:900px){.main-nav{order:0;width:auto;overflow:visible;padding:0}}
+        .cart-btn{display:flex;align-items:center;gap:.5rem;border:2px solid var(--encre);border-radius:999px;padding:.5rem .9rem;font-weight:700;background:#fff;transition:background-color .2s}
+        .cart-btn:hover{background:var(--menthe)}
+        .cart-count{background:var(--mandarine);color:var(--encre);font-size:.8rem;font-weight:800;min-width:1.4rem;height:1.4rem;border-radius:999px;display:grid;place-items:center;padding:0 .3rem}
+
+        /* Couvertures d'ebooks dessinées en CSS */
+        .cover{--c:var(--basilic);--ink:#fff;position:relative;aspect-ratio:3/4;background:var(--c);color:var(--ink);border-radius:.3rem .8rem .8rem .3rem;box-shadow:0 22px 30px -14px rgba(11,61,46,.5);container-type:inline-size;overflow:hidden}
+        .cover::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6%;background:rgba(0,0,0,.18)}
+        .cover-in{position:absolute;inset:0;padding:9cqw 7cqw 8cqw 12cqw;display:flex;flex-direction:column;justify-content:space-between}
+        .cover-brand{font-weight:700;font-size:6.5cqw;line-height:1.1}
+        .cover-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:10.5cqw;line-height:1.05;letter-spacing:-.02em}
+        .cover-foot{font-weight:700;font-size:6cqw;line-height:1.2}
+        .art{align-self:center;width:56%;aspect-ratio:1;font-size:5cqw}
+        .art-bowl{border-radius:50%;border:.45em solid rgba(255,255,255,.92);background:radial-gradient(circle,#fff 0 18%,transparent 19%),conic-gradient(#2F9E44 0 20%,#FFD43B 0 40%,#E8590C 0 60%,#7048E8 0 80%,#F783AC 0 100%)}
+        .art-boxes{display:grid;grid-template-columns:1fr 1fr;gap:.6em}
+        .art-boxes i{border-radius:.5em;border:.25em solid rgba(255,255,255,.95);background:var(--b)}
+        .art-cake{border-radius:50%;background:radial-gradient(circle,var(--rose-pale) 0 13%,transparent 14%),conic-gradient(from 25deg,#7B3F2A 0 310deg,transparent 310deg 360deg),#fff}
+
+        /* Hero */
+        .hero{background:var(--menthe);padding:3rem 0 3.5rem}
+        .hero-grid{display:grid;gap:2.5rem;align-items:center}
+        @media(min-width:860px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:3rem}.hero{padding:4.5rem 0 5rem}}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:2px solid var(--encre);border-radius:999px;padding:.3rem .9rem .3rem .4rem;font-weight:700;font-size:.9rem;margin-bottom:1.4rem}
+        .hero-badge .kcal{font-size:.8rem}
+        .hero h1{font-size:clamp(2.5rem,6.2vw,4.4rem);margin-bottom:1.25rem}
+        .hero-lead{font-size:1.15rem;color:var(--gris);max-width:34rem;margin-bottom:1.75rem}
+        .hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.1rem}
+        .hero-pack{font-size:.95rem;color:var(--gris);margin-bottom:1.75rem}
+        .hero-pack a{text-decoration:underline;text-underline-offset:3px;font-weight:600;color:var(--encre)}
+        .trust{display:grid;gap:.6rem 1.5rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));font-size:.95rem;font-weight:500}
+        .trust li{display:flex;align-items:center;gap:.6rem}
+        .trust svg{color:var(--basilic)}
+        .hero-covers{position:relative;width:100%;aspect-ratio:6/5}
+        .hero-covers > div{position:absolute;width:44%}
+        .hero-covers .cover{width:100%}
+        .hero-covers .c-left{left:3%;top:12%;transform:rotate(-9deg)}
+        .hero-covers .c-mid{left:27%;top:0;z-index:3;width:46%}
+        .hero-covers .c-right{right:3%;top:14%;transform:rotate(8deg)}
+
+        /* Menus de fêtes */
+        .festive{background:var(--sapin);color:#fff;padding:4.5rem 0}
+        .festive-head{display:grid;gap:1.5rem;margin-bottom:2.5rem}
+        @media(min-width:860px){.festive-head{grid-template-columns:1fr auto;align-items:end}}
+        .festive h2{font-size:clamp(2rem,4.6vw,3.2rem);max-width:20ch;margin-bottom:.9rem}
+        .festive .lead{color:#cde2d6;max-width:40rem;font-size:1.08rem}
+        .countdown{border:2px solid var(--or);color:var(--or);border-radius:1.1rem;padding:.8rem 1.3rem;display:flex;align-items:baseline;gap:.7rem;font-weight:700}
+        .countdown strong{font-family:'Bricolage Grotesque',sans-serif;font-size:3rem;line-height:1;font-weight:800}
+        .menus{display:grid;gap:1.5rem}
+        @media(min-width:900px){.menus{grid-template-columns:1fr 1fr}}
+        .menu-card{background:var(--sapin-clair);border:1px solid rgba(235,198,107,.4);border-radius:1.25rem;padding:1.5rem}
+        .menu-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;padding-bottom:1.1rem;border-bottom:2px dashed rgba(235,198,107,.55)}
+        .menu-head h3{font-size:1.9rem;color:var(--or)}
+        .menu-head p{color:#bcd5c7;font-size:.95rem;margin-top:.25rem;max-width:26rem}
+        .menu-days{background:var(--or);color:var(--sapin);font-weight:800;border-radius:.7rem;padding:.35rem .8rem;font-size:.9rem;white-space:nowrap}
+        .course{display:grid;grid-template-columns:5rem 1fr auto;gap:.4rem 1rem;align-items:start;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.12)}
+        .course-type{color:var(--or);font-weight:700}
+        .course-title{font-weight:700;font-size:1.05rem;line-height:1.3}
+        .course-meta{color:#b7d0c3;font-size:.88rem;margin-top:.2rem}
+        .link-light{color:#fff;font-weight:600;text-decoration:underline;text-underline-offset:3px;font-size:.92rem;display:inline-block;margin-top:.45rem}
+        .link-light:hover{color:var(--or)}
+        .menu-total{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-top:1.1rem;font-weight:700}
+        .menu-total .kcal{font-size:1rem}
+        .festive-note{margin-top:1.5rem;color:#a9c7b7;font-size:.88rem;max-width:46rem}
+        @media(max-width:560px){.course{grid-template-columns:1fr auto}.course-type{grid-column:1/-1}.course-body{grid-column:1}}
+
+        /* Catalogue */
+        .catalogue{padding:5rem 0;background:#fff}
+        .section-head{max-width:40rem;margin:0 auto 3rem;text-align:center}
+        .section-head h2{font-size:clamp(2rem,4.4vw,3rem);margin-bottom:.9rem}
+        .section-head p{color:var(--gris);font-size:1.08rem}
+        .ebooks{display:grid;gap:1.75rem}
+        @media(min-width:900px){.ebooks{grid-template-columns:repeat(3,1fr)}}
+        .ebook-card{display:flex;flex-direction:column;border:2px solid var(--encre);border-radius:1.25rem;overflow:hidden;background:#fff}
+        .ebook-visual{background:var(--tint);padding:2rem 1rem 1.6rem;display:flex;justify-content:center}
+        .ebook-visual .cover{width:min(58%,11.5rem)}
+        .ebook-body{padding:1.3rem 1.3rem 1.5rem;display:flex;flex-direction:column;gap:.9rem;flex:1}
+        .ebook-body h3{font-size:1.55rem}
+        .ebook-body .desc{color:var(--gris);font-size:.98rem}
+        .chips{display:flex;flex-wrap:wrap;gap:.4rem}
+        .chip{background:var(--menthe);border-radius:999px;padding:.2rem .65rem;font-size:.82rem;font-weight:600}
+        .chip-kcal{background:var(--citron)}
+        .link-btn{text-align:left;font-weight:700;color:var(--basilic);text-decoration:underline;text-underline-offset:3px;align-self:flex-start}
+        .link-btn:hover{color:var(--basilic-fonce)}
+        .price-row{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid var(--trait);padding-top:1rem}
+        .old-price{display:block;font-size:.85rem;color:#7b8a82;text-decoration:line-through}
+        .price{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.9rem;line-height:1}
+
+        /* Pack */
+        .pack{background:var(--mandarine-pale);padding:4.5rem 0}
+        .pack-panel{background:var(--basilic);color:#fff;border-radius:1.5rem;padding:2rem;display:grid;gap:2rem;align-items:center}
+        @media(min-width:860px){.pack-panel{grid-template-columns:1.6fr 1fr;padding:3rem}}
+        .pack-save{display:inline-block;background:var(--citron);color:var(--encre);font-weight:800;border-radius:999px;padding:.25rem .9rem;margin-bottom:1rem;font-size:.92rem}
+        .pack-panel h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:1rem}
+        .pack-panel p{color:#dcf0e3;margin-bottom:1.2rem}
+        .pack-list{display:grid;gap:.55rem;font-size:.95rem}
+        .pack-list li{display:flex;gap:.6rem;align-items:flex-start}
+        .pack-list svg{margin-top:.2rem;color:var(--citron)}
+        .pack-list code{background:rgba(255,255,255,.16);border-radius:.4rem;padding:.05rem .45rem;color:var(--citron);font-weight:700}
+        .pack-price{background:#fff;color:var(--encre);border-radius:1.2rem;padding:1.6rem;text-align:center}
+        .pack-price .old-price{font-size:1rem}
+        .pack-price .price{font-size:3rem;display:block;margin:.3rem 0}
+        .pack-price small{display:block;color:var(--gris);margin-bottom:1.1rem}
+
+        /* Avis */
+        .reviews{background:var(--menthe);padding:4.5rem 0}
+        .reviews h2{font-size:clamp(1.9rem,4vw,2.7rem);text-align:center;margin-bottom:2.5rem}
+        .review-grid{display:grid;gap:1.25rem}
+        @media(min-width:860px){.review-grid{grid-template-columns:repeat(3,1fr)}}
+        .review{background:#fff;border-radius:1rem;padding:1.4rem;border:1px solid var(--trait)}
+        .stars{color:#E8890C;letter-spacing:.1em;margin-bottom:.6rem}
+        .review p{color:var(--gris);margin-bottom:1rem}
+        .review b{display:block}
+
+        /* FAQ */
+        .faq{padding:4.5rem 0}
+        .faq-inner{max-width:48rem;margin:0 auto;padding:0 1.25rem}
+        .faq h2{font-size:clamp(1.9rem,4vw,2.7rem);text-align:center;margin-bottom:2rem}
+        .faq details{border:2px solid var(--encre);border-radius:1rem;padding:1.1rem 1.3rem;margin-bottom:.9rem;background:#fff}
+        .faq summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+        .faq summary::-webkit-details-marker{display:none}
+        .faq summary::after{content:"+";font-size:1.5rem;line-height:1;color:var(--basilic);font-weight:800}
+        .faq details[open] summary::after{content:"−"}
+        .faq details p{margin-top:.8rem;color:var(--gris)}
+        .faq a{color:var(--basilic);font-weight:700;text-decoration:underline}
+
+        /* Pied de page */
+        .site-footer{background:var(--encre);color:#c7d3cc;padding:3.5rem 0 2rem;font-size:.95rem}
+        .footer-grid{display:grid;gap:2rem;padding-bottom:2rem;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.14)}
+        @media(min-width:860px){.footer-grid{grid-template-columns:repeat(3,1fr)}}
+        .footer-title{display:block;color:#fff;font-weight:700;margin-bottom:.6rem}
+        .footer-brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.4rem;color:#fff;display:block;margin-bottom:.6rem}
+        .site-footer a.under{color:#fff;text-decoration:underline}
+        .legal-links{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem}
+        .legal-links button:hover{color:#fff;text-decoration:underline}
+        .footer-bottom{text-align:center;font-size:.82rem;color:#93a39a}
+        .footer-bottom p+p{margin-top:.4rem}
+
+        /* Fenêtres modales et panier */
+        .modal,.drawer{position:fixed;inset:0;z-index:60;display:none}
+        .modal.open{display:flex;align-items:center;justify-content:center;padding:1rem}
+        .drawer.open{display:block}
+        .backdrop{position:absolute;inset:0;background:rgba(11,26,20,.6)}
+        .modal-panel{position:relative;background:#fff;border-radius:1.4rem;width:100%;max-width:34rem;max-height:90vh;overflow-y:auto;padding:1.6rem}
+        @media(min-width:640px){.modal-panel{padding:2rem}}
+        .modal-panel.wide{max-width:40rem}
+        .close-btn{position:absolute;right:1rem;top:.8rem;font-size:2rem;line-height:1;color:#6b7a72;width:2.4rem;height:2.4rem;border-radius:50%}
+        .close-btn:hover{background:var(--menthe);color:var(--encre)}
+        .modal-panel h3{font-size:1.7rem;margin:0 2.2rem .9rem 0}
+        .modal-body{color:var(--gris);display:grid;gap:.9rem;font-size:.97rem}
+        .modal-body h4{color:var(--encre);font-size:1.1rem;margin-top:.4rem}
+        .modal-body strong{color:var(--encre)}
+        .toc-chapter{color:var(--encre);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:1.05rem;margin-top:.6rem}
+        .toc-note{font-size:.88rem}
+        .toc-list{display:grid;gap:.5rem}
+        .toc-list li{display:flex;justify-content:space-between;align-items:center;gap:.8rem;border:1px solid var(--trait);border-radius:.8rem;padding:.55rem .8rem}
+        .toc-list small{display:block;color:var(--gris);font-size:.82rem}
+        .toc-list b{color:var(--encre);line-height:1.3}
+        .recipe-meta{display:flex;flex-wrap:wrap;gap:.4rem}
+        .kcal-big{display:flex;align-items:baseline;gap:.5rem;background:var(--citron);color:var(--encre);border-radius:1rem;padding:.7rem 1rem;font-weight:700}
+        .kcal-big strong{font-family:'Bricolage Grotesque',sans-serif;font-size:2.3rem;line-height:1;font-weight:800}
+        .modal-body ul.bullets{display:grid;gap:.35rem;list-style:disc;padding-left:1.2rem}
+        .modal-body ol.steps{display:grid;gap:.6rem;list-style:decimal;padding-left:1.3rem}
+        .recipe-tip{background:var(--menthe);border-radius:.8rem;padding:.7rem .9rem;color:var(--encre)}
+        .fineprint{font-size:.82rem;color:#7b8a82}
+        .drawer-panel{position:absolute;right:0;top:0;bottom:0;width:100%;max-width:26rem;background:#fff;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2)}
+        .drawer-head{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 1.4rem;border-bottom:1px solid var(--trait)}
+        .drawer-head h3{font-size:1.5rem}
+        .drawer-head .close-btn{position:static}
+        .drawer-items{flex:1;overflow-y:auto;padding:1.3rem 1.4rem;display:grid;gap:.8rem;align-content:start}
+        .cart-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--menthe);border-radius:1rem;padding:.9rem 1rem}
+        .cart-line h4{font-size:1rem;font-family:'Figtree',sans-serif;letter-spacing:0;font-weight:700}
+        .cart-line span{color:var(--basilic);font-weight:700;font-size:.9rem}
+        .remove-btn{color:#c0262d;font-weight:600;font-size:.88rem;text-decoration:underline}
+        .drawer-foot{padding:1.3rem 1.4rem;border-top:1px solid var(--trait);background:var(--menthe)}
+        .field{width:100%;border:2px solid var(--trait);border-radius:.8rem;padding:.65rem .9rem;background:#fff}
+        .field:focus{border-color:var(--basilic);outline:none}
+        .promo-row{display:flex;gap:.5rem;margin-bottom:.7rem}
+        .promo-msg{font-size:.85rem;margin-bottom:.7rem;font-weight:600}
+        .total-row{display:flex;justify-content:space-between;font-size:1.25rem;font-weight:800;margin:.9rem 0}
+        .pay-link-box{background:var(--menthe);border-radius:1rem;padding:.9rem 1rem;margin-bottom:1rem}
+        .pay-link-box code{font-size:.8rem;font-weight:700;color:#003087;word-break:break-all}
+        .btn-paypal{background:#0070BA;color:#fff}
+        .btn-paypal:hover{background:#005EA6}
+        .step-label{font-weight:700;color:var(--basilic);font-size:.9rem}
+        .error-msg{color:#c0262d;font-size:.88rem;font-weight:600;margin-bottom:.6rem}
+        .download-line{display:flex;justify-content:space-between;align-items:center;gap:1rem;background:var(--menthe);border-radius:1rem;padding:.9rem 1rem}
+        .download-line b{display:block}
+        .download-line span{font-size:.85rem;color:var(--basilic)}
+    </style>
+</head>
+<body>
+
+    <!-- Bande festive du haut -->
+    <div class="topbar">
+        <a href="#fetes" class="topbar-label">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 6.5l14.2 11M19.1 6.5L4.9 17.5M2 12h20"/></svg>
+            <span>Menus de fêtes<span class="sr-only"> : Noël et Nouvel An, avec les calories de chaque entrée, plat et dessert</span></span>
+        </a>
+        <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker-track"></div></div>
+        <a href="#fetes" class="topbar-cta" id="topbar-cta">Voir les menus</a>
+    </div>
+
+    <!-- En-tête -->
+    <header class="site-header">
+        <div class="wrap header-inner">
+            <a href="#" class="logo" aria-label="Healthy Food, retour en haut de la page">
+                <span class="logo-mark"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19c0-9 6-15 15-15 0 10-6 15-14 15z" fill="#FFD43B"/><path d="M5 19c3-5 6-8 10-10" stroke="#176B3A" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>
+                <span><span class="logo-name">Healthy Food</span><span class="logo-sub">Alimentation saine</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Navigation principale">
+                <a href="#ebooks">Nos ebooks</a>
+                <a href="#fetes" class="nav-festive">Menus de fêtes</a>
+                <a href="#pack">Pack intégral</a>
+                <a href="#avis">Avis clients</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <button type="button" onclick="toggleCart()" class="cart-btn" aria-label="Ouvrir le panier">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                <span>Panier</span>
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div>
+                <p class="hero-badge"><span class="kcal">kcal</span> Calories indiquées pour chaque recette</p>
+                <h1>Cuisinez sain, rapide et gourmand au quotidien.</h1>
+                <p class="hero-lead">Des guides de recettes simples et équilibrées, avec les calories de chaque entrée, plat et dessert. Aucun ingrédient introuvable, aucune heure perdue en cuisine.</p>
+                <div class="hero-actions">
+                    <a href="#ebooks" class="btn btn-primary">Découvrir les ebooks</a>
+                    <a href="#fetes" class="btn btn-festive">Voir les menus de fêtes</a>
+                </div>
+                <p class="hero-pack"><a href="#pack">Le pack des 3 ebooks : <span id="hero-pack-price"></span> au lieu de <span id="hero-pack-old"></span> (<span id="hero-pack-pct"></span>)</a></p>
+                <ul class="trust">
+                    <li><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Accès à vie</li>
+                    <li><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>Lisible sur mobile et tablette</li>
+                    <li><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>Paiement PayPal sécurisé</li>
+                    <li><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>Téléchargement immédiat</li>
+                </ul>
+            </div>
+            <div class="hero-covers" id="hero-covers" aria-hidden="true"></div>
+        </div>
+    </section>
+
+    <!-- Menus de fêtes -->
+    <section id="fetes" class="festive">
+        <div class="wrap">
+            <div class="festive-head">
+                <div>
+                    <h2>Deux menus de fêtes légers, avec les calories de chaque plat</h2>
+                    <p class="lead">Noël et Nouvel An : une entrée, un plat et un dessert pour 4 personnes, avec les ingrédients, les étapes et les calories par portion.</p>
+                </div>
+                <div class="countdown" id="countdown-box" hidden><strong id="cd-days">0</strong><span id="cd-label"></span></div>
+            </div>
+            <div class="menus" id="menus-grid"></div>
+            <p class="festive-note">Calories estimées par portion à partir de valeurs nutritionnelles moyennes. Elles varient selon les marques et les quantités servies, et ne remplacent pas l'avis d'un professionnel de santé.</p>
+        </div>
+    </section>
+
+    <!-- Catalogue -->
+    <section id="ebooks" class="catalogue">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>Nos guides numériques</h2>
+                <p>Chaque ebook réunit des recettes avec ingrédients, étapes, temps de préparation et calories par portion, ainsi que des listes de courses claires.</p>
+            </div>
+            <div class="ebooks" id="products-grid"></div>
+        </div>
+    </section>
+
+    <!-- Pack intégral -->
+    <section id="pack" class="pack">
+        <div class="wrap">
+            <div class="pack-panel">
+                <div>
+                    <span class="pack-save">Offre spéciale : économisez <span id="pack-save"></span></span>
+                    <h2>Le Pack Intégral Healthy Food (les 3 ebooks)</h2>
+                    <p>Les 3 guides réunis : <strong>100 Recettes Healthy &amp; Rapides</strong>, <strong>Le Guide du Batch Cooking</strong> et <strong>Pâtisseries &amp; Gourmandises Sans Sucre</strong>. <span id="pack-count"></span> recettes avec calories, plannings et listes de courses prêts à l'emploi.</p>
+                    <ul class="pack-list">
+                        <li><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Téléchargement immédiat des 3 fichiers complets</li>
+                        <li><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>Bonus inclus : tableau des équivalences sucre et farines saines</li>
+                        <li><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg><span>Code promo applicable : <code>HEALTHY10</code> (-10 % supplémentaires)</span></li>
+                    </ul>
+                </div>
+                <div class="pack-price">
+                    <span class="old-price" id="pack-old"></span>
+                    <span class="price" id="pack-price"></span>
+                    <small>Paiement unique, accès illimité</small>
+                    <button type="button" onclick="addToCart('pack')" class="btn btn-warm btn-block">Ajouter le pack</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avis -->
+    <section id="avis" class="reviews">
+        <div class="wrap">
+            <h2>Ce que disent nos lecteurs</h2>
+            <div class="review-grid">
+                <div class="review">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p>« Le guide Batch Cooking a sauvé mes semaines ! Je cuisine 2 heures le dimanche et tous mes midis sont prêts. »</p>
+                    <b>Camille L.</b>
+                </div>
+                <div class="review">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p>« Le moelleux chocolat-courgette de l'ebook pâtisserie est bluffant, même mes enfants en redemandent. »</p>
+                    <b>Sarah M.</b>
+                </div>
+                <div class="review">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p>« Des ingrédients simples qu'on trouve au supermarché du coin. Enfin un livre healthy accessible. »</p>
+                    <b>Julien R.</b>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="faq-inner">
+            <h2>Questions fréquentes</h2>
+            <details>
+                <summary>Comment vais-je recevoir mes ebooks après le paiement ?</summary>
+                <p>Dès votre règlement effectué via PayPal, validez simplement l'étape de confirmation sur cette page pour débloquer immédiatement les boutons de téléchargement de vos ebooks complets.</p>
+            </details>
+            <details>
+                <summary>Comment sont calculées les calories de chaque recette ?</summary>
+                <p>Ce sont des estimations par portion, calculées à partir de valeurs nutritionnelles moyennes des ingrédients. Elles varient selon les marques, la taille des portions et la cuisson. Elles ne remplacent pas l'avis d'un médecin ou d'un diététicien.</p>
+            </details>
+            <details>
+                <summary>Les menus de fêtes sont-ils complets ?</summary>
+                <p>Oui. Les menus de Noël et du Nouvel An sont détaillés sur cette page : ingrédients, étapes, temps de préparation et calories pour l'entrée, le plat et le dessert.</p>
+            </details>
+            <details>
+                <summary>Sur quels appareils puis-je les lire ?</summary>
+                <p>Tous nos ebooks sont compatibles avec les smartphones (Android et iPhone), tablettes, ordinateurs et liseuses, et peuvent être imprimés chez vous.</p>
+            </details>
+            <details>
+                <summary>Une question sur votre commande ?</summary>
+                <p>Contactez notre support directement par e-mail à <a href="mailto:healthyfood@yahoo.fr">healthyfood@yahoo.fr</a>, nous répondons sous 24 h.</p>
+            </details>
+        </div>
+    </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <span class="footer-brand">Healthy Food</span>
+                    <p>Alimentation saine et gourmande. Éditions numériques indépendantes dédiées au bien-être dans l'assiette.</p>
+                </div>
+                <div>
+                    <span class="footer-title">Contact et support</span>
+                    <p>E-mail : <a href="mailto:healthyfood@yahoo.fr" class="under">healthyfood@yahoo.fr</a></p>
+                    <p>Paiements sécurisés via PayPal.Me</p>
+                </div>
+                <div>
+                    <span class="footer-title">Informations légales</span>
+                    <div class="legal-links">
+                        <button type="button" onclick="openLegal('cgv')">Conditions générales de vente (CGV)</button>
+                        <button type="button" onclick="openLegal('mentions')">Mentions légales</button>
+                        <button type="button" onclick="openLegal('confidentialite')">Politique de confidentialité</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Healthy Food (Alimentation Saine). Tous droits réservés.</p>
+                <p>Les calories indiquées sont des estimations par portion et ne constituent pas un avis médical.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Panier latéral -->
+    <div id="cart-drawer" class="drawer" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="backdrop" onclick="toggleCart()"></div>
+        <div class="drawer-panel">
+            <div class="drawer-head">
+                <h3 id="cart-title">Votre panier</h3>
+                <button type="button" onclick="toggleCart()" class="close-btn" aria-label="Fermer le panier">&times;</button>
+            </div>
+            <div id="cart-items" class="drawer-items"></div>
+            <div class="drawer-foot">
+                <div class="promo-row">
+                    <input type="text" id="promo-input" placeholder="Code promo (ex : HEALTHY10)" class="field" aria-label="Code promo">
+                    <button type="button" onclick="applyPromo()" class="btn btn-festive btn-small">Appliquer</button>
+                </div>
+                <div id="promo-msg" class="promo-msg" hidden></div>
+                <div class="total-row"><span>Total à régler</span><span id="cart-total">0,00 €</span></div>
+                <button type="button" id="checkout-btn" onclick="openCheckout()" disabled class="btn btn-primary btn-block">Passer la commande</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fenêtre de paiement PayPal et téléchargement -->
+    <div id="checkout-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+        <div class="backdrop" onclick="closeCheckout()"></div>
+        <div class="modal-panel">
+            <button type="button" onclick="closeCheckout()" class="close-btn" aria-label="Fermer">&times;</button>
+
+            <div id="step-payment">
+                <span class="step-label">Étape 1 sur 2 : règlement</span>
+                <h3 id="checkout-title" style="margin-top:.3rem">Finaliser votre commande</h3>
+                <p class="modal-body" style="margin-bottom:1rem">Cliquez sur le bouton PayPal pour régler le montant exact de <strong id="modal-amount">0,00 €</strong> sur le compte officiel <strong>PayPal.Me/healthyfood13</strong>.</p>
+                <div class="pay-link-box">
+                    <div class="fineprint" style="margin-bottom:.3rem">Lien direct de paiement :</div>
+                    <div style="display:flex;align-items:center;justify-content:space-between;gap:.6rem">
+                        <code id="paypal-link-text">https://www.paypal.me/healthyfood13</code>
+                        <button type="button" id="copy-btn" onclick="copyPaypalLink()" class="btn btn-small" style="border:2px solid var(--encre);background:#fff">Copier</button>
+                    </div>
+                </div>
+                <a id="paypal-btn" href="https://www.paypal.me/healthyfood13" target="_blank" rel="noopener" class="btn btn-paypal btn-block" style="margin-bottom:1.2rem">
+                    <span>Payer avec PayPal</span><span id="paypal-btn-amount"></span>
+                </a>
+                <div style="border-top:1px solid var(--trait);padding-top:1.1rem">
+                    <p class="fineprint" style="margin-bottom:.7rem;font-size:.88rem">Une fois le paiement effectué sur PayPal, renseignez vos informations pour accéder à vos ebooks :</p>
+                    <input type="text" id="client-name" placeholder="Votre prénom" class="field" style="margin-bottom:.6rem" aria-label="Votre prénom" autocomplete="given-name">
+                    <input type="email" id="client-email" placeholder="Votre adresse e-mail" class="field" style="margin-bottom:.8rem" aria-label="Votre adresse e-mail" autocomplete="email">
+                    <div id="pay-error" class="error-msg" hidden></div>
+                    <button type="button" onclick="confirmPayment()" class="btn btn-primary btn-block">J'ai effectué le paiement : accéder aux ebooks</button>
+                </div>
+            </div>
+
+            <div id="step-download" hidden>
+                <div class="logo-mark" style="margin-bottom:1rem"><svg width="22" height="22" fill="none" stroke="#fff" stroke-width="3" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                <h3>Merci <span id="confirm-name"></span> !</h3>
+                <p class="modal-body" style="margin-bottom:1.1rem">Votre accès est débloqué. Téléchargez et lisez vos ebooks complets ci-dessous. Un récapitulatif est également lié à <strong>healthyfood@yahoo.fr</strong>.</p>
+                <div id="download-list" style="display:grid;gap:.7rem;margin-bottom:1.3rem"></div>
+                <button type="button" onclick="closeCheckout()" class="btn btn-block" style="border:2px solid var(--encre)">Fermer la fenêtre</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fenêtre sommaire, recettes et mentions légales -->
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="info-title">
+        <div class="backdrop" onclick="closeInfoModal()"></div>
+        <div class="modal-panel wide">
+            <button type="button" onclick="closeInfoModal()" class="close-btn" aria-label="Fermer">&times;</button>
+            <h3 id="info-title"></h3>
+            <div id="info-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  RECETTES  (kcal = estimation par portion, voir "per")
+        // ============================================================
+        const RECIPES = {
+            // ---------- EBOOK 1 : 100 Recettes Healthy & Rapides ----------
+            pancakes: { title: "Pancakes express avoine & banane", type: "Petit-déjeuner", time: 10, serves: "2 personnes (6 pancakes)", kcal: 255, per: "par personne (3 pancakes)",
+                ing: ["1 banane bien mûre", "2 œufs entiers", "60 g de flocons d'avoine mixés en farine", "1/2 c. à café de levure chimique", "1 pincée de cannelle"],
+                steps: ["Écrasez la banane à la fourchette dans un bol jusqu'à obtenir une purée lisse.", "Ajoutez les œufs battus, les flocons d'avoine et la levure. Mélangez bien.", "Faites cuire 2 minutes de chaque côté dans une poêle chaude légèrement huilée. Servez avec quelques fruits rouges."] },
+            porridge: { title: "Porridge crémeux chocolat & noisettes", type: "Petit-déjeuner", time: 5, serves: "1 bol", kcal: 310, per: "par bol",
+                ing: ["50 g de flocons d'avoine", "200 ml de lait végétal (amande ou avoine sans sucre ajouté)", "1 c. à soupe de cacao pur non sucré", "1 c. à café de sirop d'érable ou de miel", "10 g de noisettes concassées"],
+                steps: ["Faites chauffer les flocons d'avoine et le lait à feu doux 4 minutes en remuant.", "Hors du feu, incorporez le cacao et le sirop d'érable. Parsemez de noisettes torréfiées."],
+                note: "Calories calculées avec du lait d'amande sans sucre ajouté. Avec du lait d'avoine, comptez environ 60 kcal de plus." },
+            yaourt_granola: { title: "Bowl de yaourt grec, fruits rouges & granola", type: "Petit-déjeuner", time: 5, serves: "1 bowl", kcal: 320, per: "par bowl",
+                ing: ["150 g de yaourt grec nature", "80 g de fruits rouges (frais ou décongelés)", "30 g de granola ou de muesli sans sucre ajouté", "1 c. à café de miel"],
+                steps: ["Versez le yaourt dans un bol.", "Ajoutez les fruits rouges, puis le granola juste avant de servir pour qu'il reste croustillant.", "Terminez par le miel."] },
+            toast_avocat: { title: "Toast avocat & œuf poché", type: "Petit-déjeuner", time: 10, serves: "1 personne (2 toasts)", kcal: 350, per: "par personne",
+                ing: ["2 tranches de pain complet ou aux céréales", "1/2 avocat mûr", "1 œuf extra-frais", "1 c. à café de vinaigre blanc (pour l'eau de pochage)", "Jus de citron, sel, poivre, piment d'Espelette"],
+                steps: ["Portez une casserole d'eau à frémissement avec le vinaigre. Faites un léger tourbillon, cassez l'œuf dedans et laissez pocher 3 minutes.", "Faites griller le pain. Écrasez l'avocat à la fourchette avec un filet de citron, du sel et du poivre.", "Tartinez les toasts, déposez l'œuf égoutté dessus et saupoudrez de piment d'Espelette."] },
+            carpaccio: { title: "Carpaccio de courgettes, citron & parmesan", type: "Entrée", time: 10, serves: "2 personnes", kcal: 170, per: "par personne",
+                ing: ["2 petites courgettes bien fermes", "20 g de parmesan en copeaux", "10 g de pignons de pin", "1 c. à soupe d'huile d'olive", "Jus et zeste d'1/2 citron", "Quelques feuilles de basilic, sel, poivre"],
+                steps: ["Tranchez les courgettes en fines lamelles à l'économe ou à la mandoline et disposez-les dans une assiette.", "Arrosez d'huile d'olive et de jus de citron, salez, poivrez et laissez mariner 5 minutes.", "Parsemez de copeaux de parmesan, de pignons légèrement torréfiés à sec, de zeste de citron et de basilic."] },
+            salade_lentilles: { title: "Salade de lentilles, thon & herbes fraîches", type: "Plat", time: 10, serves: "2 personnes", kcal: 290, per: "par personne",
+                ing: ["250 g de lentilles vertes cuites (en bocal ou précuites)", "1 boîte de thon au naturel (140 g), égouttée", "1 tomate coupée en dés", "1/2 oignon rouge émincé", "1 petit bouquet de persil", "1 c. à soupe d'huile d'olive", "Jus d'1/2 citron, sel, poivre"],
+                steps: ["Rincez et égouttez les lentilles. Mettez-les dans un saladier avec le thon émietté, la tomate et l'oignon rouge.", "Ajoutez le persil ciselé, l'huile d'olive, le jus de citron, le sel et le poivre.", "Mélangez et laissez reposer 5 minutes pour que les saveurs se mélangent."] },
+            buddha: { title: "Buddha bowl quinoa, avocat & pois chiches rôtis", type: "Plat", time: 15, serves: "2 personnes", kcal: 400, per: "par personne",
+                ing: ["140 g de quinoa cuit", "200 g de pois chiches en bocal rincés", "1 avocat mûr coupé en lamelles", "1 grosse poignée de jeunes pousses d'épinards", "1 c. à café de paprika doux", "1 c. à soupe d'huile d'olive", "Jus de citron"],
+                steps: ["Faites revenir les pois chiches à la poêle 6 minutes avec l'huile d'olive et le paprika jusqu'à ce qu'ils soient dorés.", "Dressez dans deux bols : les épinards, le quinoa, les pois chiches chauds et l'avocat. Arrosez d'un filet de jus de citron."] },
+            wrap: { title: "Wrap complet poulet, houmous & crudités", type: "Plat", time: 15, serves: "2 wraps", kcal: 315, per: "par wrap",
+                ing: ["2 tortillas de blé complet ou de maïs", "200 g de blanc de poulet émincé", "4 c. à soupe de houmous nature", "1 carotte râpée", "1/2 concombre en bâtonnets", "Sel, poivre, herbes de Provence"],
+                steps: ["Faites griller le poulet émincé 6 minutes à la poêle avec sel, poivre et herbes de Provence.", "Tartinez chaque tortilla de houmous, ajoutez les crudités et le poulet chaud, puis roulez bien serré."] },
+            veloute: { title: "Velouté de courgettes, basilic & ricotta", type: "Entrée", time: 20, serves: "3 bols", kcal: 70, per: "par bol",
+                ing: ["3 courgettes coupées en rondelles", "1 oignon", "500 ml de bouillon de légumes", "2 c. à soupe de ricotta fraîche", "10 feuilles de basilic frais"],
+                steps: ["Faites cuire les courgettes et l'oignon dans le bouillon pendant 15 minutes.", "Mixez finement avec le basilic frais et la ricotta pour obtenir une texture veloutée sans crème lourde."] },
+            curry: { title: "Curry doux de lentilles corail & lait de coco", type: "Plat", time: 20, serves: "3 personnes", kcal: 340, per: "par personne",
+                ing: ["200 g de lentilles corail rincées", "250 ml de lait de coco léger", "400 g de pulpe de tomates", "1 oignon émincé", "1 gousse d'ail", "1 c. à soupe de curry doux en poudre"],
+                steps: ["Faites revenir l'oignon et l'ail avec le curry 2 minutes.", "Ajoutez les lentilles corail, la pulpe de tomates, le lait de coco et 150 ml d'eau.", "Laissez mijoter 15 minutes à feu moyen en remuant régulièrement jusqu'à absorption."] },
+            poulet_patate: { title: "Poulet citronné & patates douces rôties", type: "Plat", time: 35, serves: "2 personnes", kcal: 355, per: "par personne",
+                ing: ["2 filets de poulet (environ 150 g chacun)", "300 g de patate douce en cubes", "1 c. à soupe d'huile d'olive", "1 citron (jus et zeste)", "1 gousse d'ail", "1 c. à café d'herbes de Provence, sel, poivre"],
+                steps: ["Préchauffez le four à 200 °C. Disposez les cubes de patate douce sur une plaque avec la moitié de l'huile, du sel et du poivre.", "Frottez les filets de poulet avec l'ail écrasé, le zeste, le jus de citron, l'huile restante et les herbes. Posez-les sur la plaque.", "Enfournez 25 minutes en retournant les patates à mi-cuisson. Vérifiez que le poulet est cuit à cœur (aucune partie rosée)."] },
+            saumon: { title: "Saumon en papillote, brocoli & citron", type: "Plat", time: 25, serves: "2 personnes", kcal: 320, per: "par personne",
+                ing: ["2 pavés de saumon (120 g chacun)", "300 g de fleurettes de brocoli", "1 citron en rondelles", "1 c. à café d'huile d'olive", "1 c. à café d'aneth ou de ciboulette, sel, poivre"],
+                steps: ["Préchauffez le four à 190 °C. Découpez deux grandes feuilles de papier cuisson.", "Sur chaque feuille, posez la moitié du brocoli, un pavé de saumon, des rondelles de citron, un filet d'huile, l'aneth, du sel et du poivre.", "Fermez bien les papillotes et enfournez 18 minutes."] },
+            omelette: { title: "Omelette aux épinards & feta", type: "Plat", time: 10, serves: "1 personne", kcal: 365, per: "par omelette",
+                ing: ["3 œufs", "80 g de jeunes pousses d'épinards", "30 g de feta émiettée", "1 c. à café d'huile d'olive", "Poivre (peu de sel : la feta est déjà salée)"],
+                steps: ["Faites tomber les épinards 2 minutes dans la poêle huilée jusqu'à ce qu'ils réduisent.", "Versez les œufs battus avec du poivre. Laissez prendre à feu moyen 2 minutes.", "Parsemez de feta, repliez l'omelette et servez aussitôt."] },
+            crevettes: { title: "Crevettes sautées ail-citron & courgettes", type: "Plat", time: 15, serves: "2 personnes", kcal: 200, per: "par personne",
+                ing: ["250 g de crevettes décortiquées", "2 courgettes en demi-rondelles", "2 gousses d'ail", "1 c. à soupe d'huile d'olive", "Jus d'1/2 citron, persil, sel, poivre"],
+                steps: ["Faites revenir les courgettes 6 minutes dans l'huile d'olive chaude jusqu'à ce qu'elles soient dorées.", "Ajoutez l'ail et les crevettes, puis faites sauter 3 à 4 minutes jusqu'à ce qu'elles soient bien roses.", "Arrosez de citron, parsemez de persil, salez et poivrez."],
+                note: "À servir avec 100 g de riz complet cuit : ajoutez environ 130 kcal par personne." },
+            vinaigrette: { title: "Vinaigrette moutarde-citron", type: "Sauce", time: 3, serves: "4 portions (environ 1 c. à soupe et demie)", kcal: 100, per: "par portion",
+                ing: ["3 c. à soupe d'huile d'olive", "2 c. à soupe de jus de citron", "1 c. à soupe de moutarde de Dijon", "1 c. à café de miel", "Sel, poivre"],
+                steps: ["Mélangez la moutarde, le citron, le miel, le sel et le poivre.", "Versez l'huile en filet en fouettant pour émulsionner.", "Conservez jusqu'à 5 jours au frais dans un petit bocal fermé."] },
+            sauce_yaourt: { title: "Sauce yaourt, citron & menthe", type: "Sauce", time: 5, serves: "4 portions", kcal: 35, per: "par portion",
+                ing: ["150 g de yaourt grec nature", "Jus d'1/2 citron", "6 feuilles de menthe ciselées", "1/2 gousse d'ail râpée", "Sel, poivre"],
+                steps: ["Mélangez tous les ingrédients dans un bol.", "Réservez 10 minutes au frais avant de servir."] },
+            houmous: { title: "Houmous maison express", type: "Sauce", time: 10, serves: "6 portions (environ 3 c. à soupe)", kcal: 100, per: "par portion",
+                ing: ["240 g de pois chiches égouttés", "2 c. à soupe de tahini (purée de sésame)", "1 c. à soupe d'huile d'olive", "Jus d'1 citron", "1 petite gousse d'ail", "1 c. à café de cumin, sel", "3 à 4 c. à soupe d'eau froide"],
+                steps: ["Mixez tous les ingrédients jusqu'à obtenir une crème lisse en ajoutant l'eau petit à petit.", "Rectifiez en citron et en sel, puis servez avec des bâtonnets de crudités."] },
+            nice_cream: { title: "Nice cream banane-fraise", type: "Dessert", time: 5, serves: "2 personnes", kcal: 130, per: "par personne",
+                ing: ["2 bananes mûres épluchées, coupées en rondelles et congelées (au moins 4 h)", "150 g de fraises surgelées", "2 à 3 c. à soupe de lait d'amande non sucré"],
+                steps: ["Mixez les bananes et les fraises congelées avec le lait d'amande, en raclant les parois, jusqu'à une texture de glace onctueuse.", "Servez immédiatement, ou placez 30 minutes au congélateur pour une texture plus ferme."] },
+
+            // ---------- EBOOK 2 : Guide du Batch Cooking ----------
+            b_lundi: { title: "Buddha bowl patate douce, pois chiches croustillants & sauce tahini", type: "Plat", time: 40, serves: "2 personnes", kcal: 520, per: "par personne",
+                ing: ["2 grosses patates douces (environ 500 g) en cubes", "240 g de pois chiches égouttés", "1 c. à soupe d'huile d'olive", "1 c. à café de cumin, sel, poivre", "Sauce tahini : 2 c. à soupe de tahini, jus d'1/2 citron, 2 c. à soupe d'eau tiède, sel"],
+                steps: ["Four à 200 °C. Enfournez les patates douces avec la moitié de l'huile et les épices pendant 35 minutes.", "Séchez les pois chiches dans un torchon, mélangez-les au reste d'huile et ajoutez-les sur la plaque pour les 20 dernières minutes : ils deviennent croustillants.", "Fouettez le tahini avec le citron, l'eau tiède et le sel jusqu'à obtenir une sauce lisse.", "Répartissez dans deux boîtes, sauce à part."] },
+            b_mardi: { title: "Dahl de lentilles corail aux épinards & riz basmati complet", type: "Plat", time: 30, serves: "2 personnes", kcal: 545, per: "par personne",
+                ing: ["100 g de lentilles corail", "200 g d'épinards frais (ou 150 g surgelés)", "1 oignon jaune émincé", "1 c. à soupe d'huile d'olive", "1 c. à café de curcuma et 1 c. à café de cumin", "10 cl de lait de coco", "100 g de riz basmati complet (poids cru)"],
+                steps: ["Faites revenir l'oignon avec l'huile et les épices 3 minutes.", "Ajoutez les lentilles et 40 cl d'eau, laissez mijoter 15 minutes.", "Incorporez les épinards et le lait de coco, cuisez encore 5 minutes.", "Servez avec le riz cuit à part (environ 25 minutes de cuisson)."] },
+            b_mercredi: { title: "Poulet mariné au citron, haricots verts & quinoa", type: "Plat", time: 25, serves: "2 personnes", kcal: 390, per: "par personne",
+                ing: ["2 filets de poulet fermier (environ 140 g chacun)", "1 citron (jus et zeste)", "1 c. à soupe d'huile d'olive", "1 gousse d'ail", "200 g de haricots verts", "80 g de quinoa (poids cru)", "Sel, poivre, thym"],
+                steps: ["Mélangez le citron, l'huile, l'ail, le thym, le sel et le poivre. Faites mariner les filets 30 minutes (ou la veille).", "Cuisez le quinoa 12 minutes dans deux fois son volume d'eau.", "Faites cuire les haricots verts 12 minutes à la vapeur.", "Poêlez le poulet 6 minutes de chaque côté, jusqu'à cuisson à cœur."] },
+            b_jeudi: { title: "Poêlée de légumes méditerranéens rôtis & œufs mollets", type: "Plat", time: 40, serves: "2 personnes", kcal: 325, per: "par personne",
+                ing: ["2 courgettes", "2 poivrons rouges", "1 oignon", "1 gousse d'ail", "1 c. à soupe et demie d'huile d'olive", "4 œufs", "Herbes de Provence, sel, poivre"],
+                steps: ["Four à 200 °C. Coupez les légumes en gros cubes, mélangez-les avec l'huile, l'ail et les herbes, et enfournez 30 minutes.", "Plongez les œufs 6 minutes dans l'eau bouillante, passez-les sous l'eau froide puis écalez-les.", "Servez les légumes rôtis avec deux œufs mollets par personne."] },
+            b_vendredi: { title: "Galettes de carottes & salade croquante", type: "Plat", time: 25, serves: "2 personnes (4 galettes)", kcal: 295, per: "par personne",
+                ing: ["3 carottes râpées (environ 300 g)", "2 œufs", "3 c. à soupe de farine de pois chiche", "1/2 oignon haché", "1 c. à soupe d'huile d'olive pour la cuisson", "Salade verte et 1 c. à soupe de vinaigrette moutarde-citron", "Cumin, sel, poivre"],
+                steps: ["Mélangez les carottes, les œufs, la farine, l'oignon, le cumin, le sel et le poivre.", "Formez 4 galettes et faites-les dorer 4 minutes de chaque côté dans l'huile chaude.", "Servez avec la salade assaisonnée."] },
+            b_butternut: { title: "Soupe de butternut, gingembre & lait de coco", type: "Entrée", time: 35, serves: "4 bols", kcal: 160, per: "par bol",
+                ing: ["800 g de butternut épluchée, en cubes", "1 oignon", "1 morceau de gingembre frais (2 cm)", "1 c. à café d'huile d'olive", "50 cl de bouillon de légumes", "10 cl de lait de coco", "Sel, poivre"],
+                steps: ["Faites suer l'oignon et le gingembre 3 minutes dans l'huile d'olive.", "Ajoutez la butternut et le bouillon, cuisez 25 minutes à frémissement.", "Mixez avec le lait de coco jusqu'à obtenir une texture veloutée."] },
+            b_gratin: { title: "Gratin de chou-fleur, ricotta & parmesan", type: "Plat", time: 45, serves: "4 personnes", kcal: 235, per: "par personne",
+                ing: ["800 g de chou-fleur en fleurettes", "250 g de ricotta", "2 œufs", "40 g de parmesan râpé", "Noix de muscade, sel, poivre"],
+                steps: ["Four à 190 °C. Cuisez les fleurettes 8 minutes à la vapeur.", "Mélangez la ricotta, les œufs, la moitié du parmesan, la muscade, le sel et le poivre.", "Disposez le chou-fleur dans un plat, nappez de l'appareil, parsemez du reste de parmesan et enfournez 25 minutes."] },
+            b_chili: { title: "Chili sin carne & riz complet", type: "Plat", time: 35, serves: "4 personnes", kcal: 335, per: "par personne",
+                ing: ["1 boîte de haricots rouges (250 g égouttés)", "100 g de maïs", "400 g de pulpe de tomates", "2 poivrons", "1 oignon", "1 c. à soupe d'huile d'olive", "1 c. à café de paprika fumé et 1 c. à café de cumin", "200 g de riz complet (poids cru)"],
+                steps: ["Faites revenir l'oignon et les poivrons en dés dans l'huile 5 minutes avec les épices.", "Ajoutez la pulpe de tomates, les haricots rouges et le maïs, puis laissez mijoter 20 minutes.", "Servez avec le riz complet cuit (environ 30 minutes de cuisson)."] },
+            b_compote: { title: "Compote pommes-poires à la cannelle", type: "Dessert", time: 25, serves: "4 portions", kcal: 145, per: "par portion",
+                ing: ["4 pommes", "2 poires", "1 c. à café de cannelle", "1 verre d'eau"],
+                steps: ["Épluchez et coupez les fruits en morceaux.", "Cuisez-les à couvert avec l'eau et la cannelle 20 minutes à feu doux.", "Écrasez à la fourchette ou mixez selon la texture souhaitée."] },
+            b_granola: { title: "Granola maison à préparer le dimanche", type: "Petit-déjeuner", time: 30, serves: "10 portions de 40 g", kcal: 225, per: "par portion de 40 g",
+                ing: ["250 g de flocons d'avoine", "80 g d'amandes concassées", "50 g de graines de courge", "80 g de sirop d'érable", "40 g d'huile de coco fondue", "1 c. à café de cannelle"],
+                steps: ["Four à 160 °C. Mélangez tous les ingrédients.", "Étalez sur une plaque et enfournez 25 minutes en remuant à mi-cuisson.", "Laissez refroidir complètement (le granola durcit en refroidissant), puis conservez dans un bocal hermétique."] },
+
+            // ---------- EBOOK 3 : Pâtisseries & Gourmandises Sans Sucre ----------
+            p_fondant: { title: "Fondant chocolat-courgette", type: "Dessert", time: 35, serves: "8 parts", kcal: 235, per: "par part",
+                ing: ["200 g de chocolat noir 70 % de cacao", "200 g de courgette crue épluchée et râpée très finement", "3 œufs", "50 g de sucre de coco (ou miel doux)", "70 g de farine d'avoine ou d'épeautre complète", "1 pincée de fleur de sel"],
+                steps: ["Préchauffez le four à 180 °C. Faites fondre le chocolat au bain-marie.", "Fouettez les œufs avec le sucre de coco jusqu'à ce que le mélange mousse.", "Ajoutez le chocolat fondu, la courgette râpée bien essorée, la farine et la fleur de sel.", "Versez dans un moule et enfournez 22 minutes. Le cœur doit rester fondant."] },
+            p_banana: { title: "Banana bread ultra-moelleux aux noix", type: "Dessert", time: 55, serves: "1 cake (10 tranches)", kcal: 195, per: "par tranche",
+                ing: ["3 bananes très mûres (tigrées)", "2 œufs", "60 ml d'huile de coco fondue (ou huile d'olive douce)", "180 g de farine complète (blé T110 ou petit épeautre)", "1 sachet de levure chimique", "1 c. à café de cannelle", "50 g de cerneaux de noix"],
+                steps: ["Écrasez les bananes en purée, ajoutez les œufs et l'huile de coco.", "Ajoutez la farine, la levure, la cannelle et les noix concassées.", "Enfournez 40 minutes à 180 °C dans un moule à cake chemisé."] },
+            p_brownie: { title: "Brownie fondant à la patate douce", type: "Dessert", time: 45, serves: "9 carrés", kcal: 145, per: "par carré",
+                ing: ["250 g de purée de patate douce (cuite à la vapeur ou au four, refroidie)", "80 g de purée d'amandes", "40 g de cacao pur non sucré", "50 g de sirop d'érable", "2 œufs", "40 g de pépites de chocolat noir 70 %", "1/2 sachet de levure chimique"],
+                steps: ["Four à 180 °C. Mixez la patate douce, la purée d'amandes, le sirop d'érable et les œufs jusqu'à obtenir une pâte lisse.", "Ajoutez le cacao et la levure, mélangez, puis incorporez les pépites de chocolat.", "Versez dans un moule carré chemisé (20 cm) et enfournez 25 minutes. Le centre doit rester légèrement tremblotant : le brownie durcit en refroidissant.", "Laissez refroidir 30 minutes avant de découper 9 carrés."] },
+            p_muffins: { title: "Muffins myrtilles & avoine", type: "Dessert", time: 30, serves: "8 muffins", kcal: 145, per: "par muffin",
+                ing: ["120 g de flocons d'avoine mixés en farine", "125 g de yaourt nature", "2 œufs", "50 g de sirop d'érable", "30 g d'huile de coco fondue", "120 g de myrtilles", "1/2 sachet de levure chimique"],
+                steps: ["Four à 180 °C. Fouettez les œufs, le yaourt, le sirop d'érable et l'huile de coco.", "Ajoutez la farine d'avoine et la levure, puis incorporez délicatement les myrtilles.", "Répartissez dans 8 empreintes à muffins et enfournez 20 minutes."] },
+            p_cookies: { title: "Cookies moelleux beurre de cacahuète & pépites noires", type: "Dessert", time: 20, serves: "10 cookies", kcal: 155, per: "par cookie",
+                ing: ["120 g de purée de cacahuètes 100 % naturelle (sans huile de palme ni sucre)", "1 œuf", "60 g de sirop d'érable", "80 g de flocons d'avoine", "1/2 c. à café de bicarbonate alimentaire", "50 g de pépites de chocolat noir 70 %"],
+                steps: ["Mélangez la purée de cacahuètes, l'œuf et le sirop d'érable.", "Incorporez les flocons d'avoine, le bicarbonate et les pépites de chocolat.", "Formez 10 boules aplaties sur une plaque et cuisez 10 à 12 minutes à 180 °C. Laissez refroidir 10 minutes pour qu'ils durcissent légèrement."] },
+            p_sables: { title: "Sablés citron & amande", type: "Dessert", time: 30, serves: "16 sablés", kcal: 85, per: "par sablé",
+                ing: ["120 g de poudre d'amandes", "60 g de farine d'épeautre complète", "40 g d'huile de coco fondue", "40 g de sirop d'agave", "Zeste de 2 citrons", "1 pincée de sel"],
+                steps: ["Mélangez tous les ingrédients jusqu'à obtenir une pâte souple, puis formez une boule.", "Étalez sur 5 mm entre deux feuilles de papier cuisson et découpez 16 sablés.", "Enfournez 12 minutes à 170 °C. Laissez refroidir sur la plaque : ils durcissent en refroidissant."] },
+            p_mousse: { title: "Mousse au chocolat à l'avocat", type: "Dessert", time: 10, serves: "4 ramequins", kcal: 180, per: "par ramequin",
+                ing: ["2 avocats bien mûrs", "3 c. à soupe de cacao pur non sucré", "3 c. à soupe de sirop d'érable", "50 ml de lait d'amande", "1 c. à café d'extrait de vanille", "1 pincée de fleur de sel"],
+                steps: ["Mixez la chair des avocats avec le cacao, le sirop d'érable, le lait d'amande et la vanille jusqu'à obtenir une crème parfaitement lisse.", "Répartissez dans 4 ramequins et placez au frais 1 heure minimum.", "Parsemez de fleur de sel ou de copeaux de chocolat noir au moment de servir."] },
+            p_chia: { title: "Pudding de chia coco & mangue", type: "Dessert", time: 5, serves: "2 verrines", kcal: 205, per: "par verrine",
+                ing: ["40 g de graines de chia", "200 ml de lait de coco léger", "100 g de mangue en dés", "1 c. à café de miel"],
+                steps: ["Mélangez le chia, le lait de coco et le miel. Laissez reposer 10 minutes puis mélangez à nouveau pour éviter les grumeaux.", "Couvrez et placez au frais au moins 4 heures (idéalement la veille).", "Servez dans deux verrines, nappées de dés de mangue."] },
+            p_pommes: { title: "Pommes au four, cannelle & noix", type: "Dessert", time: 35, serves: "2 personnes", kcal: 180, per: "par personne",
+                ing: ["2 pommes (type Boskoop ou Canada)", "20 g de noix concassées", "2 c. à café de miel", "1 c. à café de cannelle"],
+                steps: ["Four à 180 °C. Évidez les pommes sans les percer complètement et placez-les dans un plat.", "Garnissez de noix, de miel et de cannelle.", "Enfournez 30 minutes, jusqu'à ce que les pommes soient tendres."] },
+            p_crumble: { title: "Crumble de poires & avoine", type: "Dessert", time: 45, serves: "4 personnes", kcal: 255, per: "par personne",
+                ing: ["4 poires mûres en cubes", "60 g de flocons d'avoine", "20 g d'huile de coco fondue", "30 g de sirop d'érable", "20 g de noix concassées", "1 c. à café de cannelle"],
+                steps: ["Four à 180 °C. Disposez les poires et la moitié de la cannelle dans un plat.", "Mélangez du bout des doigts l'avoine, l'huile de coco fondue, le sirop d'érable, les noix et le reste de cannelle pour obtenir une pâte sableuse.", "Répartissez sur les poires et enfournez 25 minutes, jusqu'à ce que le dessus soit doré."] },
+            p_energy: { title: "Energy balls coco, dattes & amandes", type: "Snack", time: 10, serves: "12 billes (sans cuisson)", kcal: 85, per: "par bille",
+                ing: ["150 g de dattes Medjool dénoyautées", "80 g de poudre d'amandes", "1 c. à soupe de cacao pur", "2 c. à soupe de noix de coco râpée pour l'enrobage"],
+                steps: ["Mixez les dattes, la poudre d'amandes et le cacao jusqu'à obtenir une pâte collante homogène.", "Roulez 12 petites boules entre vos paumes et enrobez-les de noix de coco râpée. Conservez au frais."] },
+
+            // ---------- MENUS DE FÊTES ----------
+            f_noel_entree: { title: "Verrines saumon fumé, avocat & grenade", type: "Entrée", time: 15, serves: "4 verrines", kcal: 220, per: "par verrine",
+                ing: ["160 g de saumon fumé", "2 avocats mûrs", "100 g de yaourt grec nature", "Jus d'1 citron", "60 g de grenade (arilles)", "1 c. à soupe d'aneth ciselé", "Poivre"],
+                steps: ["Écrasez les avocats avec le citron et le poivre. Ajoutez le yaourt et mélangez pour obtenir une crème.", "Répartissez la crème d'avocat au fond de 4 verrines.", "Coupez le saumon fumé en lanières, posez-les dessus et décorez de grenade et d'aneth.", "Servez frais. Préparez jusqu'à 2 heures à l'avance en filmant au contact pour que l'avocat ne noircisse pas."] },
+            f_noel_plat: { title: "Volaille rôtie aux marrons & clémentines, purée de céleri-rave", type: "Plat", time: 60, serves: "4 personnes", kcal: 440, per: "par personne",
+                ing: ["4 filets de volaille fermière, poulet ou dinde (environ 150 g chacun)", "200 g de marrons cuits sous vide", "2 clémentines (jus et quelques quartiers)", "200 g de champignons de Paris", "2 c. à soupe d'huile d'olive", "Thym, romarin, sel, poivre", "Pour la purée : 600 g de céleri-rave en cubes, 10 cl de lait (ou boisson végétale non sucrée), 1 c. à soupe d'huile d'olive, noix de muscade"],
+                steps: ["Four à 190 °C. Frottez les filets avec une cuillère d'huile, le thym, le romarin, le sel et le poivre.", "Disposez-les dans un plat avec les champignons coupés en deux, les marrons et les quartiers de clémentine. Arrosez du jus de clémentine et de l'huile restante.", "Enfournez 35 à 40 minutes en arrosant à mi-cuisson. La volaille doit être cuite à cœur (jus clair).", "Pendant ce temps, cuisez le céleri-rave 20 minutes dans l'eau bouillante salée, égouttez, puis mixez avec le lait, l'huile d'olive et la muscade.", "Servez les filets nappés de jus, avec la purée."] },
+            f_noel_dessert: { title: "Poires pochées aux épices de Noël & crème de fromage blanc", type: "Dessert", time: 40, serves: "4 personnes", kcal: 190, per: "par personne",
+                ing: ["4 poires fermes", "1 bâton de cannelle, 2 étoiles de badiane, 3 clous de girofle", "2 c. à soupe de miel", "200 g de fromage blanc 0 %", "1/2 c. à café de vanille", "20 g d'amandes effilées grillées"],
+                steps: ["Épluchez les poires en gardant la queue. Portez à frémissement 1 litre d'eau avec les épices et le miel.", "Pochez les poires 25 minutes à feu doux, jusqu'à ce que la pointe d'un couteau s'enfonce facilement. Laissez-les refroidir dans le sirop.", "Fouettez le fromage blanc avec la vanille.", "Servez chaque poire avec une quenelle de crème, un peu de sirop et des amandes grillées."] },
+            f_nye_entree: { title: "Velouté de potimarron & éclats de châtaignes", type: "Entrée", time: 35, serves: "4 bols", kcal: 155, per: "par bol",
+                ing: ["800 g de potimarron (la peau se mange), en cubes", "1 oignon", "1 c. à café d'huile d'olive", "50 cl de bouillon de légumes", "10 cl de lait de coco", "40 g de châtaignes cuites émiettées", "Noix de muscade, sel, poivre"],
+                steps: ["Faites suer l'oignon dans l'huile 3 minutes, ajoutez le potimarron et le bouillon.", "Cuisez 25 minutes, puis mixez avec le lait de coco et la muscade.", "Servez en bols avec les éclats de châtaignes."] },
+            f_nye_plat: { title: "Dos de cabillaud en croûte de noisettes, gratin de patate douce", type: "Plat", time: 50, serves: "4 personnes", kcal: 380, per: "par personne",
+                ing: ["4 dos de cabillaud (150 g chacun)", "40 g de noisettes concassées", "1 c. à soupe de moutarde de Dijon", "1 c. à soupe d'huile d'olive", "600 g de patate douce en fines rondelles", "1 c. à soupe d'huile d'olive pour le gratin", "Thym, persil, sel, poivre"],
+                steps: ["Four à 200 °C. Disposez les rondelles de patate douce dans un plat avec l'huile, le thym, le sel et le poivre. Enfournez 25 minutes.", "Badigeonnez le cabillaud de moutarde, salez légèrement, puis pressez dessus les noisettes mélangées au persil et à l'huile d'olive.", "Posez le poisson sur le gratin et poursuivez la cuisson 12 minutes."] },
+            f_nye_dessert: { title: "Mini-cheesecakes sans cuisson framboise-citron", type: "Dessert", time: 25, serves: "6 verrines", kcal: 210, per: "par verrine",
+                ing: ["60 g de dattes dénoyautées", "60 g d'amandes", "250 g de fromage blanc 0 % égoutté", "100 g de mascarpone", "2 c. à soupe de miel", "Zeste et jus d'1 citron", "150 g de framboises"],
+                steps: ["Mixez les dattes et les amandes en une pâte grossière, tassez-la au fond de 6 verrines.", "Fouettez le fromage blanc, le mascarpone, le miel, le zeste et le jus de citron, puis répartissez sur les bases.", "Placez au frais 3 heures minimum et décorez de framboises avant de servir."] }
+        };
+        Object.keys(RECIPES).forEach(k => { RECIPES[k].id = k; });
+
+        const TYPE_LABELS = {
+            "Petit-déjeuner": ["petit-déjeuner", "petits-déjeuners"],
+            "Entrée": ["entrée", "entrées"],
+            "Plat": ["plat", "plats"],
+            "Dessert": ["dessert", "desserts"],
+            "Snack": ["snack", "snacks"],
+            "Sauce": ["sauce", "sauces"]
+        };
+
+        const CAL_NOTE = "COMMENT LIRE LES CALORIES DE CE LIVRE\nChaque recette indique ses calories (kcal) par portion. Ce sont des estimations calculées à partir de valeurs nutritionnelles moyennes : elles varient selon les marques, la taille des portions et la cuisson. Elles ne remplacent pas l'avis d'un médecin ou d'un diététicien.";
+
+        // ============================================================
+        //  MENUS DE FÊTES
+        // ============================================================
+        const MENUS = [
+            { id: "noel", title: "Menu de Noël", label: "Noël", month: 11, day: 25, serves: "4 personnes",
+              blurb: "Un repas complet et réconfortant, du saumon fumé aux poires pochées, sans lourdeur.",
+              courses: ["f_noel_entree", "f_noel_plat", "f_noel_dessert"] },
+            { id: "nye", title: "Menu du Nouvel An", label: "Le Nouvel An", month: 0, day: 1, serves: "4 à 6 personnes",
+              blurb: "Un réveillon plus léger : velouté de potimarron, cabillaud en croûte de noisettes et cheesecakes sans cuisson.",
+              courses: ["f_nye_entree", "f_nye_plat", "f_nye_dessert"] }
+        ];
+
+        // ============================================================
+        //  EBOOKS
+        // ============================================================
+        const EBOOKS = {
+            ebook1: {
+                id: "ebook1", title: "100 Recettes Healthy & Rapides", price: 14.90, oldPrice: 24.90,
+                desc: "Des petits-déjeuners gourmands aux dîners prêts en 15 minutes chrono, sans ingrédients compliqués.",
+                color: "#FF8A1F", ink: "#1D2A24", tint: "#FFEBD6", art: "bowl",
+                intro: "INTRODUCTION : LES BASES D'UNE ASSIETTE ÉQUILIBRÉE\nUne assiette saine et rassasiante repose sur 4 piliers simples :\n- 1/2 assiette de légumes de saison (crus ou cuits à la vapeur douce)\n- 1/4 de protéines de qualité (œufs, poulet, poisson, lentilles, pois chiches, tofu)\n- 1/4 de glucides complexes (quinoa, patate douce, riz complet, sarrasin)\n- 1 source de bons lipides (huile d'olive vierge, avocat, noix, graines de courge)",
+                chapters: [
+                    { title: "Chapitre 1 : Petits-déjeuners énergisants", recipes: ["pancakes", "porridge", "yaourt_granola", "toast_avocat"] },
+                    { title: "Chapitre 2 : Entrées, bowls & déjeuners express (15 min)", recipes: ["carpaccio", "salade_lentilles", "buddha", "wrap"] },
+                    { title: "Chapitre 3 : Dîners légers & réconfortants", recipes: ["veloute", "curry", "poulet_patate", "saumon", "omelette", "crevettes"] },
+                    { title: "Chapitre 4 : Sauces maison saines & vinaigrettes", recipes: ["vinaigrette", "sauce_yaourt", "houmous"] },
+                    { title: "Chapitre 5 : Desserts express", recipes: ["nice_cream"] }
+                ]
+            },
+            ebook2: {
+                id: "ebook2", title: "Le Guide du Batch Cooking", price: 14.90, oldPrice: 22.90,
+                desc: "Cuisinez 2 heures le dimanche et libérez vos soirées toute la semaine avec nos plannings et listes de courses.",
+                color: "#176B3A", ink: "#FFFFFF", tint: "#E6F5EA", art: "boxes",
+                intro: "LA MÉTHODE EN 4 ÉTAPES POUR GAGNER 5 HEURES PAR SEMAINE\n1. Le Four en premier : Lancez toujours les cuissons longues au four dès le début (légumes rôtis, patates douces, gratins).\n2. Les Céréales & Légumineuses : Faites cuire en grande quantité du riz complet, du quinoa ou des lentilles dans deux casseroles en parallèle.\n3. Les Découpes à cru : Pendant que ça cuit, lavez et taillez vos crudités et herbes fraîches.\n4. L'Assemblage & Conservation : Laissez refroidir avant de fermer vos boîtes en verre hermétiques.\n\n----------------------------------------------------\nPLANNING TYPE : SEMAINE ÉQUILIBRÉE (5 REPAS DU SOIR)\n----------------------------------------------------\n- Lundi : Buddha Bowl patate douce rôtie, pois chiches croustillants & sauce tahini\n- Mardi : Dahl de lentilles corail aux épinards et riz basmati complet\n- Mercredi : Filets de poulet marinés au citron, haricots verts vapeur & quinoa\n- Jeudi : Poêlée de légumes méditerranéens rôtis & œufs mollets\n- Vendredi : Galettes de légumes maison & salade croquante\n\n----------------------------------------------------\nLISTE DE COURSES OPTIMISÉE PAR RAYON (POUR 2 PERSONNES)\n----------------------------------------------------\nLÉGUMES & FRUITS :\n- 2 grosses patates douces\n- 400 g d'épinards frais\n- 400 g de haricots verts\n- 2 courgettes, 2 poivrons rouges, 3 carottes\n- 2 oignons jaunes, 2 citrons\n\nÉPICERIE SÈCHE :\n- 250 g de quinoa\n- 250 g de riz basmati complet\n- 200 g de lentilles corail\n- 1 bocal de pois chiches (400 g)\n- Purée de sésame (Tahini), huile d'olive, curcuma, cumin\n\nFRAIS & PROTÉINES :\n- 4 filets de poulet fermier (ou tofu ferme)\n- 6 œufs plein air\n- 1 boîte de lait de coco (400 ml)\n\n----------------------------------------------------\nDÉROULÉ CHRONOMÉTRÉ DE LA SESSION (2H00)\n----------------------------------------------------\n00h00 - 00h20 : Préchauffez le four à 200°C. Coupez les patates douces, courgettes et poivrons en cubes. Enfournez sur deux plaques avec huile d'olive et épices pour 35 min.\n00h20 - 00h45 : Lancez la cuisson du riz, du quinoa et du dahl de lentilles corail sur les plaques de cuisson.\n00h45 - 01h15 : Faites cuire les haricots verts à la vapeur (12 min) et faites mariner/cuire les filets de poulet au citron.\n01h15 - 01h45 : Préparez la sauce tahini (2 c.à.s tahini + jus de citron + eau tiède + sel) et façonnez les galettes de carottes râpées/œufs.\n01h45 - 02h00 : Répartissez toutes les préparations refroidies dans vos contenants en verre et étiquetez les jours.\n\n----------------------------------------------------\nCONSERVATION AU FRAIS ET AU CONGÉLATEUR\n----------------------------------------------------\n- Au réfrigérateur (4 °C maximum) : plats cuisinés, soupes et légumes rôtis, 3 jours. Riz, quinoa et poisson cuits, 2 jours.\n- Au congélateur (-18 °C) : soupes, dahl, chili et gratins, jusqu'à 3 mois. Décongelez toujours au réfrigérateur, jamais à température ambiante.\n- Pour une semaine complète, congelez dès le dimanche les repas du jeudi et du vendredi, et décongelez-les la veille au réfrigérateur.\n- Refroidissez les préparations en moins d'une heure avant de les mettre au frais, dans des boîtes bien fermées.\n- Ne réchauffez un plat qu'une seule fois, et chauffez-le à cœur.",
+                chapters: [
+                    { title: "Méthode : organiser sa session de 2 h pas à pas", recipes: [], plain: true },
+                    { title: "Semaine 1 : menus Printemps / Été + liste de courses", recipes: ["b_lundi", "b_mardi", "b_mercredi", "b_jeudi", "b_vendredi"] },
+                    { title: "Semaine 2 : menus Automne / Hiver + liste de courses", recipes: ["b_butternut", "b_gratin", "b_chili", "b_compote"],
+                      note: "LISTE DE COURSES SEMAINE 2 (POUR 4 PERSONNES)\nLÉGUMES & FRUITS : 800 g de butternut, 800 g de chou-fleur, 2 poivrons, 2 oignons, gingembre frais, 4 pommes, 2 poires.\nÉPICERIE SÈCHE : 1 boîte de haricots rouges, 100 g de maïs, 400 g de pulpe de tomates, 200 g de riz complet, bouillon de légumes, 1 boîte de lait de coco, huile d'olive, paprika fumé, cumin, noix de muscade, cannelle.\nFRAIS : 250 g de ricotta, 2 œufs, 40 g de parmesan." },
+                    { title: "Les bases du dimanche", recipes: ["b_granola"] },
+                    { title: "Guide complet de conservation au frais et au congélateur", recipes: [], plain: true }
+                ]
+            },
+            ebook3: {
+                id: "ebook3", title: "Pâtisseries & Gourmandises Sans Sucre", price: 14.90, oldPrice: 21.90,
+                desc: "Faites-vous plaisir sans culpabilité : gâteaux fondants, cookies et snacks sains à indice glycémique bas.",
+                color: "#D6336C", ink: "#FFFFFF", tint: "#FFE3EC", art: "cake",
+                intro: "REMPLACER LE SUCRE BLANC & LE BEURRE SANS PERDRE EN GOURMANDISE\n- 100 g de sucre blanc = 70 g de sucre de coco OU 80 g de sirop d'érable/agave OU 100 g de compote de pommes sans sucre ajouté.\n- 100 g de beurre = 80 g de purée d'amandes blanches OU 100 g de courgette finement râpée (indétectable au goût, apporte un moelleux incroyable !).\n\nTABLEAU DES ÉQUIVALENCES : FARINES & ŒUFS\n- 100 g de farine blanche = 100 g de farine d'épeautre complète OU 70 g de farine d'avoine + 30 g de poudre d'amandes.\n- 1 œuf = 1 c. à soupe de graines de lin moulues + 3 c. à soupe d'eau (laissez gonfler 5 minutes).",
+                chapters: [
+                    { title: "Comprendre les alternatives naturelles au sucre blanc", recipes: [], plain: true },
+                    { title: "Gâteaux & cakes ultra-fondants", recipes: ["p_fondant", "p_banana", "p_brownie", "p_muffins"] },
+                    { title: "Biscuits & cookies crousti-fondants", recipes: ["p_cookies", "p_sables"] },
+                    { title: "Desserts de fruits & crèmes", recipes: ["p_mousse", "p_chia", "p_pommes", "p_crumble"] },
+                    { title: "Snacks & energy balls sans cuisson en 5 min", recipes: ["p_energy"] }
+                ]
+            }
+        };
+
+        const products = Object.assign({}, EBOOKS, {
+            pack: { id: "pack", title: "Pack Intégral Healthy Food (3 Ebooks)", price: 29.90, oldPrice: 44.70, isPack: true }
+        });
+
+        // ============================================================
+        //  OUTILS
+        // ============================================================
+        function esc(s) {
+            return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+        function eur(n) { return n.toFixed(2).replace(".", ",") + " €"; }
+        function ebookRecipes(id) { return EBOOKS[id].chapters.flatMap(c => c.recipes.map(r => RECIPES[r])); }
+        function ebookStats(id) {
+            const list = ebookRecipes(id);
+            const byType = {};
+            Object.keys(TYPE_LABELS).forEach(t => {
+                const n = list.filter(r => r.type === t).length;
+                if (n) byType[t] = n;
+            });
+            return { n: list.length, byType };
+        }
+
+        // Compte à rebours
+        function daysUntil(month, day) {
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            let target = new Date(now.getFullYear(), month, day);
+            if (target < today) target = new Date(now.getFullYear() + 1, month, day);
+            return Math.round((target - today) / 86400000);
+        }
+        function daysText(label, d) {
+            if (d === 0) return label + " : c'est aujourd'hui";
+            if (d === 1) return label + " : demain";
+            return label + " dans " + d + " jours";
+        }
+
+        // ============================================================
+        //  COUVERTURES D'EBOOKS (dessinées en CSS)
+        // ============================================================
+        function coverHTML(id) {
+            const e = EBOOKS[id];
+            const n = ebookRecipes(id).length;
+            const arts = {
+                bowl: '<div class="art art-bowl"></div>',
+                boxes: '<div class="art art-boxes"><i style="--b:#FFD43B"></i><i style="--b:#FF8A1F"></i><i style="--b:#9AD8A9"></i><i style="--b:#F783AC"></i></div>',
+                cake: '<div class="art art-cake"></div>'
+            };
+            return '<div class="cover" style="--c:' + e.color + ';--ink:' + e.ink + '"><div class="cover-in">' +
+                '<span class="cover-brand">Healthy Food</span>' + arts[e.art] +
+                '<div><div class="cover-title">' + esc(e.title) + '</div><div class="cover-foot" style="margin-top:3cqw">' + n + ' recettes avec calories</div></div></div></div>';
+        }
+
+        function renderHeroCovers() {
+            document.getElementById("hero-covers").innerHTML =
+                '<div class="c-left">' + coverHTML("ebook2") + '</div>' +
+                '<div class="c-mid">' + coverHTML("ebook1") + '</div>' +
+                '<div class="c-right">' + coverHTML("ebook3") + '</div>';
+        }
+
+        // ============================================================
+        //  BANDE FESTIVE, MENUS DE FÊTES
+        // ============================================================
+        const MENU_SUFFIX = { noel: "de Noël", nye: "du Nouvel An" };
+        const MENU_AFTER = { noel: "Noël", nye: "le Nouvel An" };
+
+        function renderTicker() {
+            const items = [];
+            MENUS.forEach(m => m.courses.forEach(id => {
+                const r = RECIPES[id];
+                items.push('<span class="tick"><span class="tick-type">' + r.type + " " + MENU_SUFFIX[m.id] + "</span><span>" + esc(r.title) + '</span><span class="kcal">' + r.kcal + " kcal</span></span>");
+            }));
+            const html = items.join("");
+            document.getElementById("ticker-track").innerHTML = html + html;
+        }
+
+        function renderMenus() {
+            document.getElementById("menus-grid").innerHTML = MENUS.map(m => {
+                const d = daysUntil(m.month, m.day);
+                const total = m.courses.reduce((s, id) => s + RECIPES[id].kcal, 0);
+                const rows = m.courses.map(id => {
+                    const r = RECIPES[id];
+                    return '<li class="course"><span class="course-type">' + r.type + '</span>' +
+                        '<div class="course-body"><div class="course-title">' + esc(r.title) + '</div>' +
+                        '<div class="course-meta">' + r.time + " min, " + esc(r.serves) + ", " + esc(r.per) + '</div>' +
+                        '<button type="button" class="link-light" onclick="openRecipe(\'' + id + '\')">Voir la recette</button></div>' +
+                        '<span class="kcal">' + r.kcal + " kcal</span></li>";
+                }).join("");
+                return '<article class="menu-card"><div class="menu-head"><div><h3>' + m.title + "</h3><p>Pour " + m.serves + ". " + m.blurb + '</p></div>' +
+                    '<span class="menu-days">' + daysText(m.label, d) + "</span></div><ul>" + rows + "</ul>" +
+                    '<div class="menu-total"><span>Total du menu, par personne</span><span class="kcal">' + total + " kcal</span></div></article>";
+            }).join("");
+
+            // Compte à rebours du prochain événement
+            const next = MENUS.map(m => ({ m, d: daysUntil(m.month, m.day) })).sort((a, b) => a.d - b.d)[0];
+            const cta = document.getElementById("topbar-cta");
+            const box = document.getElementById("countdown-box");
+            if (next.d <= 60) {
+                cta.textContent = daysText(next.m.label, next.d);
+                if (next.d >= 1) {
+                    document.getElementById("cd-days").textContent = next.d;
+                    document.getElementById("cd-label").textContent = (next.d > 1 ? "jours" : "jour") + " avant " + MENU_AFTER[next.m.id];
+                    box.hidden = false;
+                }
+            }
+        }
+
+        // ============================================================
+        //  CATALOGUE ET PACK
+        // ============================================================
+        function renderProducts() {
+            document.getElementById("products-grid").innerHTML = ["ebook1", "ebook2", "ebook3"].map(id => {
+                const p = products[id];
+                const st = ebookStats(id);
+                const typeChips = Object.entries(st.byType).map(([t, n]) => '<span class="chip">' + n + " " + TYPE_LABELS[t][n > 1 ? 1 : 0] + "</span>").join("");
+                return '<article class="ebook-card" style="--tint:' + p.tint + '">' +
+                    '<div class="ebook-visual">' + coverHTML(id) + "</div>" +
+                    '<div class="ebook-body"><h3>' + esc(p.title) + '</h3><p class="desc">' + p.desc + "</p>" +
+                    '<div class="chips"><span class="chip chip-kcal">' + st.n + " recettes avec calories</span>" + typeChips + "</div>" +
+                    '<button type="button" onclick="openToc(\'' + id + '\')" class="link-btn">Voir les recettes et leurs calories</button>' +
+                    '<div class="price-row"><div><span class="old-price">' + eur(p.oldPrice) + '</span><span class="price">' + eur(p.price) + "</span></div>" +
+                    '<button type="button" onclick="addToCart(\'' + id + '\')" class="btn btn-primary">Ajouter</button></div></div></article>';
+            }).join("");
+        }
+
+        function renderPackInfo() {
+            const pk = products.pack;
+            const pct = Math.round((1 - pk.price / pk.oldPrice) * 100);
+            const total = ["ebook1", "ebook2", "ebook3"].reduce((s, id) => s + ebookRecipes(id).length, 0);
+            document.getElementById("hero-pack-price").textContent = eur(pk.price);
+            document.getElementById("hero-pack-old").textContent = eur(pk.oldPrice);
+            document.getElementById("hero-pack-pct").textContent = "-" + pct + " %";
+            document.getElementById("pack-save").textContent = eur(pk.oldPrice - pk.price);
+            document.getElementById("pack-old").textContent = eur(pk.oldPrice);
+            document.getElementById("pack-price").textContent = eur(pk.price);
+            document.getElementById("pack-count").textContent = total;
+        }
+
+        // ============================================================
+        //  FENÊTRES (panier, paiement, sommaire, recettes)
+        // ============================================================
+        let lastFocus = null;
+        function openEl(el) {
+            lastFocus = document.activeElement;
+            el.classList.add("open");
+            document.body.style.overflow = "hidden";
+            const b = el.querySelector(".close-btn");
+            if (b) b.focus();
+        }
+        function closeEl(el) {
+            el.classList.remove("open");
+            if (!document.querySelector(".modal.open, .drawer.open")) document.body.style.overflow = "";
+            if (lastFocus && lastFocus.focus) lastFocus.focus();
+        }
+        document.addEventListener("keydown", e => {
+            if (e.key === "Escape") document.querySelectorAll(".modal.open, .drawer.open").forEach(closeEl);
+        });
+
+        function openToc(id) {
+            const e = EBOOKS[id];
+            const st = ebookStats(id);
+            let html = "<p><strong>" + st.n + " recettes</strong> avec leurs calories par portion (estimations). Les ingrédients et les étapes sont dans l'ebook complet.</p>";
+            e.chapters.forEach(ch => {
+                html += '<div class="toc-chapter">' + esc(ch.title) + "</div>";
+                if (ch.recipes.length) {
+                    html += '<ul class="toc-list">' + ch.recipes.map(rid => {
+                        const r = RECIPES[rid];
+                        return "<li><span><b>" + esc(r.title) + "</b><small>" + r.type + ", " + r.time + " min, " + esc(r.per) + '</small></span><span class="kcal">' + r.kcal + " kcal</span></li>";
+                    }).join("") + "</ul>";
+                }
+            });
+            html += '<p class="fineprint">Calories estimées à partir de valeurs nutritionnelles moyennes. Elles varient selon les marques et les quantités.</p>';
+            document.getElementById("info-title").textContent = e.title;
+            document.getElementById("info-body").innerHTML = html;
+            openEl(document.getElementById("info-modal"));
+        }
+
+        function openRecipe(id) {
+            const r = RECIPES[id];
+            const html =
+                '<div class="recipe-meta"><span class="chip">' + r.type + '</span><span class="chip">' + r.time + ' min</span><span class="chip">' + esc(r.serves) + "</span></div>" +
+                '<div class="kcal-big"><strong>' + r.kcal + "</strong><span>kcal " + esc(r.per) + "</span></div>" +
+                "<h4>Ingrédients</h4><ul class=\"bullets\">" + r.ing.map(i => "<li>" + esc(i) + "</li>").join("") + "</ul>" +
+                "<h4>Préparation</h4><ol class=\"steps\">" + r.steps.map(s => "<li>" + esc(s) + "</li>").join("") + "</ol>" +
+                (r.note ? '<p class="recipe-tip">' + esc(r.note) + "</p>" : "") +
+                '<p class="fineprint">Calories estimées à partir de valeurs nutritionnelles moyennes. Elles varient selon les marques et les quantités.</p>';
+            document.getElementById("info-title").textContent = r.title;
+            document.getElementById("info-body").innerHTML = html;
+            openEl(document.getElementById("info-modal"));
+        }
+
+        function openLegal(type) {
+            const titles = {
+                cgv: "Conditions Générales de Vente (CGV)",
+                mentions: "Mentions Légales",
+                confidentialite: "Politique de Confidentialité"
+            };
+            const texts = {
+                cgv: "<p>Les présents ouvrages numériques (ebooks) sont édités par <strong>Healthy Food (Alimentation Saine)</strong>.</p><p>Le règlement s'effectue via PayPal (PayPal.Me/healthyfood13). S'agissant de contenus numériques fournis immédiatement après validation, le droit de rétractation ne s'applique pas une fois le téléchargement entamé conformément à l'article L221-28 du Code de la consommation.</p><p>Contact : healthyfood@yahoo.fr</p>",
+                mentions: "<p><strong>Éditeur du site :</strong> Healthy Food - Alimentation Saine</p><p><strong>Contact e-mail :</strong> healthyfood@yahoo.fr</p><p><strong>Hébergement :</strong> Hébergement web statique sécurisé HTTPS.</p>",
+                confidentialite: "<p>Les données saisies lors de la validation (prénom et adresse e-mail) sont uniquement utilisées pour le suivi de commande et le support client via healthyfood@yahoo.fr. Aucune donnée bancaire n'est stockée sur ce site.</p>"
+            };
+            document.getElementById("info-title").textContent = titles[type];
+            document.getElementById("info-body").innerHTML = texts[type];
+            openEl(document.getElementById("info-modal"));
+        }
+
+        function closeInfoModal() { closeEl(document.getElementById("info-modal")); }
+
+        // ============================================================
+        //  PANIER
+        // ============================================================
+        let cart = [];
+        let discount = 0;
+
+        function addToCart(id) {
+            if (id === "pack") {
+                cart = cart.filter(x => x === "pack");
+                if (!cart.includes("pack")) cart.push("pack");
+            } else if (!cart.includes("pack") && !cart.includes(id)) {
+                cart.push(id);
+            }
+            updateCartUI();
+            const d = document.getElementById("cart-drawer");
+            if (!d.classList.contains("open")) openEl(d);
+        }
+        function removeFromCart(id) {
+            cart = cart.filter(item => item !== id);
+            updateCartUI();
+        }
+        function toggleCart() {
+            const d = document.getElementById("cart-drawer");
+            if (d.classList.contains("open")) closeEl(d); else openEl(d);
+        }
+        function applyPromo() {
+            const code = document.getElementById("promo-input").value.trim().toUpperCase();
+            const msg = document.getElementById("promo-msg");
+            msg.hidden = false;
+            if (code === "HEALTHY10") {
+                discount = 0.10;
+                msg.textContent = "Code HEALTHY10 appliqué (-10 %).";
+                msg.style.color = "var(--basilic)";
+            } else {
+                discount = 0;
+                msg.textContent = "Code promo invalide.";
+                msg.style.color = "#c0262d";
+            }
+            updateCartUI();
+        }
+        function getCartTotal() {
+            const subtotal = cart.reduce((sum, id) => sum + products[id].price, 0);
+            return +(subtotal * (1 - discount)).toFixed(2);
+        }
+        function updateCartUI() {
+            document.getElementById("cart-count").textContent = cart.length;
+            const container = document.getElementById("cart-items");
+            document.getElementById("cart-total").textContent = eur(getCartTotal());
+            document.getElementById("checkout-btn").disabled = cart.length === 0;
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align:center;color:#7b8a82;padding:3rem 0">Votre panier est vide.</p>';
+                return;
+            }
+            container.innerHTML = cart.map(id => {
+                const p = products[id];
+                return '<div class="cart-line"><div><h4>' + esc(p.title) + "</h4><span>" + eur(p.price) + (p.isPack ? " : les 3 ebooks" : "") + "</span></div>" +
+                    '<button type="button" onclick="removeFromCart(\'' + id + '\')" class="remove-btn">Retirer</button></div>';
+            }).join("");
+        }
+
+        // ============================================================
+        //  PAIEMENT ET TÉLÉCHARGEMENT
+        // ============================================================
+        function openCheckout() {
+            closeEl(document.getElementById("cart-drawer"));
+            const total = getCartTotal();
+            const formatted = eur(total);
+            const paypalUrl = "https://www.paypal.me/healthyfood13/" + total.toFixed(2) + "EUR";
+            document.getElementById("modal-amount").textContent = formatted;
+            document.getElementById("paypal-btn-amount").textContent = "(" + formatted + ")";
+            document.getElementById("paypal-link-text").textContent = paypalUrl;
+            document.getElementById("paypal-btn").href = paypalUrl;
+            document.getElementById("pay-error").hidden = true;
+            document.getElementById("step-payment").hidden = false;
+            document.getElementById("step-download").hidden = true;
+            openEl(document.getElementById("checkout-modal"));
+        }
+        function closeCheckout() { closeEl(document.getElementById("checkout-modal")); }
+
+        function copyPaypalLink() {
+            const link = document.getElementById("paypal-link-text").textContent;
+            const btn = document.getElementById("copy-btn");
+            const show = txt => { btn.textContent = txt; setTimeout(() => { btn.textContent = "Copier"; }, 2000); };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(() => show("Copié"), () => show("Copie impossible"));
+            } else {
+                show("Copie impossible");
+            }
+        }
+
+        // Texte complet d'un ebook
+        function recipeBlock(r, n) {
+            return n + ". " + r.title.toUpperCase() + "\n" +
+                r.type + " - Prêt en " + r.time + " min - Pour " + r.serves + "\n" +
+                "CALORIES (estimation) : " + r.kcal + " kcal " + r.per + "\n\n" +
+                "Ingrédients :\n" + r.ing.map(i => "- " + i).join("\n") + "\n\n" +
+                "Préparation :\n" + r.steps.map((s, i) => (i + 1) + ". " + s).join("\n") + "\n" +
+                (r.note ? "\nNote : " + r.note + "\n" : "");
+        }
+        const FILE_TITLES = {
+            ebook1: "EBOOK 1 : 100 RECETTES HEALTHY & RAPIDES",
+            ebook2: "EBOOK 2 : LE GUIDE DU BATCH COOKING (2H / SEMAINE)",
+            ebook3: "EBOOK 3 : PÂTISSERIES & GOURMANDISES SANS SUCRE RAFFINÉ"
+        };
+        function buildEbookText(id) {
+            const e = EBOOKS[id];
+            const bar = "====================================================";
+            const sep = "----------------------------------------------------";
+            let out = "HEALTHY FOOD - ALIMENTATION SAINE & GOURMANDE\n" + bar + "\n" + FILE_TITLES[id] + "\n" + bar + "\n\n" +
+                e.intro + "\n\n" + CAL_NOTE + "\n\n";
+            let n = 0;
+            e.chapters.forEach(ch => {
+                if (!ch.recipes.length) return;
+                out += sep + "\n" + ch.title.toUpperCase() + "\n" + sep + "\n\n";
+                if (ch.note) out += ch.note + "\n\n";
+                ch.recipes.forEach(rid => { n++; out += recipeBlock(RECIPES[rid], n) + "\n"; });
+            });
+            out += "© 2026 Healthy Food (healthyfood@yahoo.fr) - Tous droits réservés.";
+            return out;
+        }
+
+        function downloadEbookFile(ebookId) {
+            const item = products[ebookId];
+            const blob = new Blob(["\ufeff" + buildEbookText(ebookId)], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = item.title.replace(/[^a-zA-Z0-9]/g, "_") + "_HealthyFood.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function confirmPayment() {
+            const name = document.getElementById("client-name").value.trim() || "Client";
+            const email = document.getElementById("client-email").value.trim();
+            const err = document.getElementById("pay-error");
+            if (!email || !email.includes("@")) {
+                err.textContent = "Merci de saisir une adresse e-mail valide pour valider votre accès.";
+                err.hidden = false;
+                return;
+            }
+            err.hidden = true;
+            document.getElementById("confirm-na
