@@ -1098,4 +1098,38 @@
                 return;
             }
             err.hidden = true;
-            document.getElementById("confirm-na
+            document.getElementById("confirm-name").textContent = name;
+
+            const unlocked = [];
+            cart.forEach(id => {
+                if (id === "pack") {
+                    ["ebook1", "ebook2", "ebook3"].forEach(e => { if (!unlocked.includes(e)) unlocked.push(e); });
+                } else if (!unlocked.includes(id)) {
+                    unlocked.push(id);
+                }
+            });
+
+            document.getElementById("download-list").innerHTML = unlocked.map(id => {
+                const p = products[id];
+                return '<div class="download-line"><div><b>' + esc(p.title) + "</b><span>Guide complet prêt à télécharger</span></div>" +
+                    '<button type="button" onclick="downloadEbookFile(\'' + id + '\')" class="btn btn-primary btn-small">Télécharger</button></div>';
+            }).join("");
+
+            document.getElementById("step-payment").hidden = true;
+            document.getElementById("step-download").hidden = false;
+            cart = [];
+            updateCartUI();
+        }
+
+        // ============================================================
+        //  DÉMARRAGE
+        // ============================================================
+        renderHeroCovers();
+        renderTicker();
+        renderMenus();
+        renderProducts();
+        renderPackInfo();
+        updateCartUI();
+    </script>
+</body>
+</html>
