@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Healthy Food / Manger Sain : 45 recettes avec calories</title>
+<meta name="description" content="Qu'est-ce qu'on mange ce soir ? 45 recettes healthy (entrées, plats, desserts) avec les quantités exactes et les calories de chaque portion, plus 3 recettes de Noël offertes.">
+<meta name="theme-color" content="#176B3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--basilic:#176B3A;--basilic-fonce:#0F4F2A;--menthe:#E6F5EA;--mandarine:#FF8A1F;--citron:#FFD43B;--rose:#D6336C;--sapin:#0B3D2E;--sapin-clair:#145240;--or:#EBC66B;--encre:#1D2A24;--gris:#53635B;--trait:#D9E5DD}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4rem;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:'Figtree',system-ui,Arial,sans-serif;line-height:1.55;color:var(--encre);background:#fff;padding-bottom:4.6rem;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul{margin:0}ul{padding:0;list-style:none}a{color:inherit}
+h1,h2,h3{font-family:'Bricolage Grotesque','Figtree',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.08}
+:focus-visible{outline:3px solid var(--mandarine);outline-offset:3px;border-radius:6px}
+.wrap{max-width:66rem;margin:0 auto;padding:0 1.1rem}
+section{padding:3.2rem 0}
+h2{font-size:clamp(1.8rem,5.2vw,2.6rem);margin-bottom:.8rem}
+.btn{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--mandarine);color:var(--encre);font-weight:800;border-radius:999px;padding:1rem 1.5rem;text-decoration:none;transition:background-color .2s,transform .2s;font-size:1.05rem}
+.btn:hover{background:#ff9b3f}.btn:active{transform:scale(.98)}
+.btn-green{background:var(--basilic);color:#fff}.btn-green:hover{background:var(--basilic-fonce)}
+.btn-ghost{background:#fff;border:2px solid var(--encre)}.btn-ghost:hover{background:var(--menthe)}
+.kcal{display:inline-block;background:var(--citron);color:var(--encre);font-weight:800;border-radius:999px;padding:.1rem .6rem;font-size:.82rem;white-space:nowrap;line-height:1.5}
+.strip{background:var(--sapin);color:var(--or);text-align:center;font-weight:700;font-size:.92rem;padding:.55rem 1rem}
+.strip a{text-decoration:underline;text-underline-offset:3px}
+.nav{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border-bottom:1px solid var(--trait)}
+.nav .wrap{display:flex;gap:1.3rem;overflow-x:auto;white-space:nowrap;padding-top:.7rem;padding-bottom:.7rem;font-weight:700;font-size:.95rem;color:var(--gris)}
+.nav a{text-decoration:none}.nav a:hover{color:var(--basilic)}.nav a.fete{color:var(--rose)}
+
+/* Hero */
+.hero{background:var(--basilic);color:#fff;padding:2.4rem 0 3rem;overflow:hidden}
+.hero-grid{display:grid;gap:2rem;align-items:center}
+@media(min-width:860px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:3rem}.hero{padding:4rem 0 4.5rem}}
+.hero .chip{display:inline-block;background:var(--citron);color:var(--encre);font-weight:800;border-radius:999px;padding:.3rem .9rem;font-size:.9rem;margin-bottom:1rem}
+.hero h1{font-size:clamp(2.3rem,8.5vw,4.2rem);margin-bottom:1rem}
+.hero .lead{font-size:1.15rem;color:#dcf0e3;max-width:34rem;margin-bottom:1.4rem}
+.price-row{display:flex;align-items:baseline;gap:.9rem;flex-wrap:wrap;margin-bottom:1rem}
+.old{text-decoration:line-through;color:#bfe3cc;font-size:1.1rem}
+.new{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:2.7rem;line-height:1;color:var(--citron)}
+.hero .btn{max-width:25rem}
+.small{font-size:.88rem;color:#cde8d6;margin-top:.8rem}
+.collage{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.hc{background:var(--t);border-radius:1.1rem;aspect-ratio:1/1.05;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;color:var(--encre);box-shadow:0 14px 24px -14px rgba(0,0,0,.5)}
+.hc .emo{font-size:clamp(2.2rem,9vw,3.4rem);line-height:1}
+@media(min-width:860px){.hc:nth-child(1){transform:rotate(-4deg)}.hc:nth-child(3){transform:rotate(4deg)}.hc:nth-child(5){transform:rotate(-3deg)}}
+
+/* Bénéfices */
+.benefits{display:grid;gap:1rem}
+@media(min-width:760px){.benefits{grid-template-columns:repeat(3,1fr)}}
+.benefit{border:2px solid var(--encre);border-radius:1.2rem;padding:1.3rem;background:#fff}
+.benefit .big{font-size:2rem;line-height:1;margin-bottom:.6rem}
+.benefit h3{font-size:1.3rem;margin-bottom:.4rem}
+.benefit p{color:var(--gris)}
+
+/* Pack */
+.packs{background:var(--menthe)}
+.pack{display:grid;border:2px solid var(--encre);border-radius:1.4rem;overflow:hidden;background:#fff}
+.pack-img{background:var(--mandarine) center/cover;min-height:13rem;display:grid;place-items:center;font-size:5rem}
+.pack-body{padding:1.4rem}
+.pack-body h2{font-size:1.9rem}
+.pack-body ul{display:grid;gap:.4rem;margin:.9rem 0}
+.pack-body li::before{content:"✓";color:var(--basilic);font-weight:800;margin-right:.55rem}
+.pack-body .btn{margin:1rem 0 .5rem}
+.muted{color:var(--gris);font-size:.92rem}
+@media(min-width:760px){.pack{grid-template-columns:1fr 1.1fr}.pack-img{min-height:100%}.pack-body{padding:2rem}}
+
+/* Recettes */
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.head p{color:var(--gris)}
+.head .btn{padding:.8rem 1.3rem}
+.dishes{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem}
+@media(min-width:640px){.dishes{grid-template-columns:repeat(3,1fr);gap:1rem}}
+@media(min-width:960px){.dishes{grid-template-columns:repeat(5,1fr)}}
+.dish{border:2px solid var(--encre);border-radius:1.1rem;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.tile{background:var(--t) center/cover no-repeat;aspect-ratio:4/3;display:grid;place-items:center;position:relative}
+.tile::before{content:"";position:absolute;width:62%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.55)}
+.tile.has-photo::before,.tile.has-photo .emo{display:none}
+.emo{position:relative;font-size:clamp(2.4rem,9vw,3.3rem);line-height:1}
+.dish-body{padding:.7rem .8rem .85rem;display:flex;flex-direction:column;gap:.45rem;align-items:flex-start;flex:1}
+.dish-body h3{font-size:1rem;line-height:1.2;letter-spacing:-.01em}
+.s-entrees{--c:var(--basilic)}.s-plats{--c:var(--mandarine)}.s-desserts{--c:var(--rose)}
+.band{height:.5rem;background:var(--c);border-radius:999px;width:4rem;margin-bottom:.8rem}
+.cta-mid{margin-top:1.5rem;display:grid;gap:.8rem;max-width:30rem}
+
+/* Noël */
+.noel{background:var(--sapin);color:#fff}
+.noel h2{color:var(--or)}.noel .intro{color:#cde2d6;margin-bottom:1.4rem;max-width:40rem}
+.noel-grid{display:grid;gap:1rem}
+@media(min-width:760px){.noel-grid{grid-template-columns:repeat(3,1fr)}}
+.noel-card{background:var(--sapin-clair);border:1px solid rgba(235,198,107,.4);border-radius:1.1rem;overflow:hidden}
+.noel-card .tile{aspect-ratio:16/9}
+.noel-body{padding:1.1rem 1.2rem 1.3rem}
+.noel-body h3{font-size:1.25rem;margin:.6rem 0 .6rem}
+.noel-body p{font-size:.95rem;color:#d6e8de;margin-bottom:.5rem}
+.noel-top{display:flex;justify-content:space-between;align-items:center}
+.noel-type{color:var(--or);font-weight:700}
+
+/* Avis */
+.avis-box{border:2px dashed var(--basilic);border-radius:1.3rem;padding:1.5rem;background:#fff;display:grid;gap:1rem;max-width:44rem}
+.avis-box .actions{display:grid;gap:.7rem;max-width:24rem}
+.stars{font-size:1.6rem;letter-spacing:.2em;color:#E8890C}
+
+.garantie{background:var(--menthe)}.garantie .wrap{max-width:44rem}
+details{border:2px solid var(--encre);border-radius:1rem;padding:1rem 1.2rem;margin-bottom:.8rem;background:#fff}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--basilic);font-weight:800}
+details[open] summary::after{content:"−"}
+details p{margin-top:.7rem;color:var(--gris)}
+footer{background:var(--encre);color:#c7d3cc;padding:2.4rem 0;font-size:.95rem}
+footer a{color:#fff;font-weight:600}footer .fine{margin-top:1rem;font-size:.82rem;color:#93a39a}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--trait);padding:.6rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem}
+.sticky b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.25rem}
+.sticky .btn{padding:.75rem 1.3rem}
+@media(min-width:900px){.sticky{display:none}body{padding-bottom:0}}
+</style>
+</head>
+<body>
+
+<div class="strip">🎄 3 recettes de Noël offertes avec le Pack Complet : <a href="#noel">je les découvre</a></div>
+<nav class="nav" aria-label="Navigation"><div class="wrap">
+<a href="#entrees">Entrées</a><a href="#plats">Plats</a><a href="#desserts">Desserts</a><a href="#noel" class="fete">Noël</a><a href="#avis">Avis</a><a href="#faq">FAQ</a>
+</div></nav>
+
+<header class="hero">
+<div class="wrap hero-grid">
+<div>
+<span class="chip">45 recettes avec les calories</span>
+<h1>Qu'est-ce qu'on mange ce soir ? Tu as déjà la réponse.</h1>
+<p class="lead">Des recettes healthy simples, avec les quantités exactes et les calories de chaque portion. Tu choisis, tu cuisines, tu te régales, sans te priver.</p>
+<div class="price-row"><span class="old">29,97 € TTC</span><span class="new">24,99 € TTC</span></div>
+<a class="btn" href="https://payhip.com/b/61luL">Je veux mes 45 recettes</a>
+<p class="small">Prix de lancement, TTC, TVA incluse. PayPal ou carte. PDF reçu tout de suite après le paiement.</p>
+</div>
+<div class="collage" aria-hidden="true"><div class="hc" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🍗</span><span class="kcal">580 kcal</span></div><div class="hc" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🥑</span><span class="kcal">285 kcal</span></div><div class="hc" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍫</span><span class="kcal">195 kcal</span></div><div class="hc" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🍝</span><span class="kcal">480 kcal</span></div><div class="hc" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🥤</span><span class="kcal">230 kcal</span></div><div class="hc" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🍛</span><span class="kcal">540 kcal</span></div></div>
+</div>
+</header>
+
+<section>
+<div class="wrap">
+<h2>Cuisiner sain, enfin simple</h2>
+<div class="benefits">
+<div class="benefit"><div class="big">⏱️</div><h3>Tu gagnes du temps</h3><p>Plus besoin de chercher quoi cuisiner : 7 jours de menus et la liste de courses sont offerts avec le pack.</p></div>
+<div class="benefit"><div class="big">🥗</div><h3>Tu manges mieux, sans te priver</h3><p>Des plats gourmands, avec les calories de chaque portion pour savoir exactement ce que tu mets dans ton assiette.</p></div>
+<div class="benefit"><div class="big">👨‍🍳</div><h3>Zéro prise de tête</h3><p>Des quantités exactes et des étapes claires : tu peux cuisiner dès ce soir.</p></div>
+</div>
+</div>
+</section>
+
+<section class="packs">
+<div class="wrap">
+<div class="pack">
+<div class="pack-img" id="pack-img" aria-hidden="true">🍽️</div>
+<div class="pack-body">
+<h2>Pack Complet : 45 recettes</h2>
+<p><s class="muted">29,97 € TTC</s> <strong style="font-size:1.5rem">24,99 € TTC</strong></p>
+<ul>
+<li>15 entrées, 15 plats et 15 desserts</li>
+<li>Bonus offert : 7 jours de menus et la liste de courses</li>
+<li>3 recettes de Noël offertes</li>
+<li>Tu économises 4,98 € par rapport aux 3 ebooks séparés</li>
+</ul>
+<a class="btn btn-green" href="https://payhip.com/b/61luL">Acheter le Pack Complet</a>
+<p class="muted">Prix TTC, TVA incluse. PayPal ou carte. Accès immédiat.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="entrees" class="s-entrees">
+<div class="wrap">
+<div class="head"><div><div class="band"></div><h2>Les entrées</h2><p>15 recettes à 9,99 € TTC. Calories estimées par portion.</p></div><a class="btn btn-green" href="https://payhip.com/b/2RVia">Acheter les entrées</a></div>
+<div class="dishes"><article class="dish"><div class="tile" data-slug="salade-avocat-feta" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🥑</span></div><div class="dish-body"><h3>Salade Avocat Feta</h3><span class="kcal">285 kcal</span></div></article><article class="dish"><div class="tile" data-slug="soupe-tomates-basilic" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🍅</span></div><div class="dish-body"><h3>Soupe Tomates Basilic</h3><span class="kcal">145 kcal</span></div></article><article class="dish"><div class="tile" data-slug="houmous" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🧆</span></div><div class="dish-body"><h3>Houmous</h3><span class="kcal">210 kcal</span></div></article><article class="dish"><div class="tile" data-slug="carpaccio-betterave" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🌿</span></div><div class="dish-body"><h3>Carpaccio Betterave</h3><span class="kcal">185 kcal</span></div></article><article class="dish"><div class="tile" data-slug="bruschetta" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🍞</span></div><div class="dish-body"><h3>Bruschetta</h3><span class="kcal">230 kcal</span></div></article><article class="dish"><div class="tile" data-slug="veloute-carottes" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🥕</span></div><div class="dish-body"><h3>Velouté Carottes</h3><span class="kcal">135 kcal</span></div></article><article class="dish"><div class="tile" data-slug="salade-quinoa" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🥗</span></div><div class="dish-body"><h3>Salade Quinoa</h3><span class="kcal">310 kcal</span></div></article><article class="dish"><div class="tile" data-slug="roules-concombre-saumon" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🍣</span></div><div class="dish-body"><h3>Roulés Concombre Saumon</h3><span class="kcal">165 kcal</span></div></article><article class="dish"><div class="tile" data-slug="salade-lentilles" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🥣</span></div><div class="dish-body"><h3>Salade Lentilles</h3><span class="kcal">295 kcal</span></div></article><article class="dish"><div class="tile" data-slug="gaspacho" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🥤</span></div><div class="dish-body"><h3>Gaspacho</h3><span class="kcal">95 kcal</span></div></article><article class="dish"><div class="tile" data-slug="toast-champignons" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🍄</span></div><div class="dish-body"><h3>Toast Champignons</h3><span class="kcal">245 kcal</span></div></article><article class="dish"><div class="tile" data-slug="salade-pois-chiches" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🥙</span></div><div class="dish-body"><h3>Salade Pois Chiches</h3><span class="kcal">285 kcal</span></div></article><article class="dish"><div class="tile" data-slug="veloute-courgettes" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🥒</span></div><div class="dish-body"><h3>Velouté Courgettes</h3><span class="kcal">125 kcal</span></div></article><article class="dish"><div class="tile" data-slug="cesar-legere" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🥬</span></div><div class="dish-body"><h3>César Légère</h3><span class="kcal">320 kcal</span></div></article><article class="dish"><div class="tile" data-slug="bouchees-avocat-crevettes" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍤</span></div><div class="dish-body"><h3>Bouchées Avocat Crevettes</h3><span class="kcal">195 kcal</span></div></article></div>
+</div>
+</section>
+
+<section id="plats" class="s-plats" style="background:var(--menthe)">
+<div class="wrap">
+<div class="head"><div><div class="band"></div><h2>Les plats</h2><p>15 recettes à 9,99 € TTC. Calories estimées par portion.</p></div><a class="btn btn-green" href="https://share.google/vKeXZhcNVwk84WqZ3">Acheter les plats</a></div>
+<div class="dishes"><article class="dish"><div class="tile" data-slug="saumon-riz" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🐟</span></div><div class="dish-body"><h3>Saumon Riz</h3><span class="kcal">520 kcal</span></div></article><article class="dish"><div class="tile" data-slug="poulet-curry" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🍛</span></div><div class="dish-body"><h3>Poulet Curry</h3><span class="kcal">540 kcal</span></div></article><article class="dish"><div class="tile" data-slug="bowl-poulet" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍗</span></div><div class="dish-body"><h3>Bowl Poulet</h3><span class="kcal">580 kcal</span></div></article><article class="dish"><div class="tile" data-slug="pates-tomates" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🍝</span></div><div class="dish-body"><h3>Pâtes Tomates</h3><span class="kcal">480 kcal</span></div></article><article class="dish"><div class="tile" data-slug="tajine" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🍲</span></div><div class="dish-body"><h3>Tajine</h3><span class="kcal">410 kcal</span></div></article><article class="dish"><div class="tile" data-slug="cabillaud" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🐠</span></div><div class="dish-body"><h3>Cabillaud</h3><span class="kcal">380 kcal</span></div></article><article class="dish"><div class="tile" data-slug="chili" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🌶️</span></div><div class="dish-body"><h3>Chili</h3><span class="kcal">490 kcal</span></div></article><article class="dish"><div class="tile" data-slug="wok-tofu" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🥢</span></div><div class="dish-body"><h3>Wok Tofu</h3><span class="kcal">420 kcal</span></div></article><article class="dish"><div class="tile" data-slug="gratin-patates-douces" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍠</span></div><div class="dish-body"><h3>Gratin Patates Douces</h3><span class="kcal">390 kcal</span></div></article><article class="dish"><div class="tile" data-slug="poulet-miel" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🍯</span></div><div class="dish-body"><h3>Poulet Miel</h3><span class="kcal">460 kcal</span></div></article><article class="dish"><div class="tile" data-slug="risotto" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🍚</span></div><div class="dish-body"><h3>Risotto</h3><span class="kcal">510 kcal</span></div></article><article class="dish"><div class="tile" data-slug="lentilles-saumon" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🥘</span></div><div class="dish-body"><h3>Lentilles Saumon</h3><span class="kcal">495 kcal</span></div></article><article class="dish"><div class="tile" data-slug="curry-pois-chiches" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🍛</span></div><div class="dish-body"><h3>Curry Pois Chiches</h3><span class="kcal">480 kcal</span></div></article><article class="dish"><div class="tile" data-slug="lasagnes" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🧀</span></div><div class="dish-body"><h3>Lasagnes</h3><span class="kcal">530 kcal</span></div></article><article class="dish"><div class="tile" data-slug="crevettes-ail" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍤</span></div><div class="dish-body"><h3>Crevettes Ail</h3><span class="kcal">390 kcal</span></div></article></div>
+</div>
+</section>
+
+<section id="desserts" class="s-desserts">
+<div class="wrap">
+<div class="head"><div><div class="band"></div><h2>Les desserts</h2><p>15 recettes à 9,99 € TTC. Calories estimées par portion.</p></div><a class="btn btn-green" href="https://share.google/tSEbRRntQWpbQJUG5">Acheter les desserts</a></div>
+<div class="dishes"><article class="dish"><div class="tile" data-slug="chia-pudding" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🍮</span></div><div class="dish-body"><h3>Chia Pudding</h3><span class="kcal">210 kcal</span></div></article><article class="dish"><div class="tile" data-slug="muffins-myrtilles" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🧁</span></div><div class="dish-body"><h3>Muffins Myrtilles</h3><span class="kcal">185 kcal</span></div></article><article class="dish"><div class="tile" data-slug="salade-fruits" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍓</span></div><div class="dish-body"><h3>Salade Fruits</h3><span class="kcal">120 kcal</span></div></article><article class="dish"><div class="tile" data-slug="yaourt-granola" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🥣</span></div><div class="dish-body"><h3>Yaourt Granola</h3><span class="kcal">240 kcal</span></div></article><article class="dish"><div class="tile" data-slug="compote-pomme" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🍎</span></div><div class="dish-body"><h3>Compote Pomme</h3><span class="kcal">110 kcal</span></div></article><article class="dish"><div class="tile" data-slug="brownies-patate-douce" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🍫</span></div><div class="dish-body"><h3>Brownies Patate Douce</h3><span class="kcal">195 kcal</span></div></article><article class="dish"><div class="tile" data-slug="panna-cotta" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🍮</span></div><div class="dish-body"><h3>Panna Cotta</h3><span class="kcal">165 kcal</span></div></article><article class="dish"><div class="tile" data-slug="crumble-pommes" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🥧</span></div><div class="dish-body"><h3>Crumble Pommes</h3><span class="kcal">260 kcal</span></div></article><article class="dish"><div class="tile" data-slug="banana-bread" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍌</span></div><div class="dish-body"><h3>Banana Bread</h3><span class="kcal">220 kcal</span></div></article><article class="dish"><div class="tile" data-slug="mousse-chocolat-avocat" style="--t:#FFF3BF"><span class="emo" aria-hidden="true">🍫</span></div><div class="dish-body"><h3>Mousse Chocolat Avocat</h3><span class="kcal">205 kcal</span></div></article><article class="dish"><div class="tile" data-slug="tarte-fruits" style="--t:#E3F0FF"><span class="emo" aria-hidden="true">🥧</span></div><div class="dish-body"><h3>Tarte Fruits</h3><span class="kcal">245 kcal</span></div></article><article class="dish"><div class="tile" data-slug="smoothie-bowl" style="--t:#F1E6FF"><span class="emo" aria-hidden="true">🥤</span></div><div class="dish-body"><h3>Smoothie Bowl</h3><span class="kcal">230 kcal</span></div></article><article class="dish"><div class="tile" data-slug="riz-au-lait" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🍚</span></div><div class="dish-body"><h3>Riz au Lait</h3><span class="kcal">215 kcal</span></div></article><article class="dish"><div class="tile" data-slug="poires-chocolat" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🍐</span></div><div class="dish-body"><h3>Poires Chocolat</h3><span class="kcal">190 kcal</span></div></article><article class="dish"><div class="tile" data-slug="cookies-avoine" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🍪</span></div><div class="dish-body"><h3>Cookies Avoine</h3><span class="kcal">150 kcal</span></div></article></div>
+<div class="cta-mid">
+<p><strong>Tu les veux toutes ?</strong> Le Pack Complet te coûte 24,99 € au lieu de 29,97 €.</p>
+<a class="btn" href="https://payhip.com/b/61luL">Je prends le Pack Complet</a>
+</div>
+</div>
+</section>
+
+<section class="noel" id="noel">
+<div class="wrap">
+<h2>3 recettes de Noël offertes</h2>
+<p class="intro">Un menu complet pour les fêtes : entrée, plat et dessert. Exclusives, elles ne sont dans aucun des ebooks. Les voici en entier.</p>
+<div class="noel-grid"><article class="noel-card"><div class="tile" data-slug="veloute-potimarron-chataignes" style="--t:#FFE8CF"><span class="emo" aria-hidden="true">🎃</span></div><div class="noel-body"><div class="noel-top"><span class="noel-type">Entrée</span><span class="kcal">210 kcal</span></div><h3>Velouté Potimarron Châtaignes</h3><p><strong>Ingrédients :</strong> 600 g de potimarron, 150 g de châtaignes, 1 oignon, 500 ml de bouillon.</p><p><strong>Préparation :</strong> Faire revenir l&#x27;oignon, ajouter le potimarron et les châtaignes, couvrir, cuire 25 min, mixer.</p></div></article><article class="noel-card"><div class="tile" data-slug="dinde-rotie-miel-herbes" style="--t:#E6F5EA"><span class="emo" aria-hidden="true">🦃</span></div><div class="noel-body"><div class="noel-top"><span class="noel-type">Plat</span><span class="kcal">280 kcal</span></div><h3>Dinde Rôtie Miel Herbes</h3><p><strong>Ingrédients :</strong> 4 escalopes de dinde, 1 c. à soupe de miel, herbes, huile d&#x27;olive.</p><p><strong>Préparation :</strong> Badigeonner, cuire 20 min au four à 180 °C.</p></div></article><article class="noel-card"><div class="tile" data-slug="buche-legere-fruits-rouges" style="--t:#FFE3EC"><span class="emo" aria-hidden="true">🎄</span></div><div class="noel-body"><div class="noel-top"><span class="noel-type">Dessert</span><span class="kcal">190 kcal</span></div><h3>Bûche Légère Fruits Rouges</h3><p><strong>Ingrédients :</strong> 3 œufs, 80 g de farine, 200 g de fromage blanc, 200 g de fruits rouges, miel.</p><p><strong>Préparation :</strong> Cuire 12 min, garnir, rouler.</p></div></article></div>
+</div>
+</section>
+
+<section id="avis">
+<div class="wrap">
+<h2>Ton avis compte</h2>
+<div class="avis-box">
+<div class="stars" aria-hidden="true">★★★★★</div>
+<p>Les premiers avis seront publiés ici dès que des lecteurs auront testé les recettes. Tu as cuisiné une de nos recettes ? Dis-nous ce que tu en as pensé.</p>
+<p class="muted">Après ton achat, tu reçois aussi un e-mail avec une page de téléchargement où tu peux laisser un avis sur le produit.</p>
+<div class="actions" id="avis-actions">
+<a class="btn btn-ghost" href="mailto:yvotchotcho@yahoo.fr?subject=Mon%20avis%20sur%20Healthy%20Food">Donner mon avis par e-mail</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="garantie">
+<div class="wrap">
+<h2>Garantie 7 jours</h2>
+<p>Satisfait ou remboursé pendant 7 jours : si le contenu ne te convient pas, écris-moi à <a href="mailto:yvotchotcho@yahoo.fr">yvotchotcho@yahoo.fr</a>.</p>
+</div>
+</section>
+
+<section id="faq">
+<div class="wrap" style="max-width:46rem">
+<h2>Questions fréquentes</h2>
+<details><summary>Comment je reçois mes recettes ?</summary><p>Après le paiement sur Payhip, tu reçois immédiatement le lien de téléchargement du PDF.</p></details>
+<details><summary>Puis-je payer par carte ?</summary><p>Oui, par PayPal ou par carte bancaire.</p></details>
+<details><summary>Les prix sont-ils TTC ?</summary><p>Oui : 9,99 € TTC par ebook et 24,99 € TTC pour le Pack Complet, TVA incluse.</p></details>
+<details><summary>Comment sont calculées les calories ?</summary><p>Ce sont des estimations par portion. Elles varient selon les marques et les quantités, et ne remplacent pas l'avis d'un médecin ou d'un diététicien.</p></details>
+</div>
+</section>
+
+<footer>
+<div class="wrap">
+<p><strong style="color:#fff">Contact :</strong> <a href="mailto:yvotchotcho@yahoo.fr">yvotchotcho@yahoo.fr</a></p>
+<p>Instagram : <a href="https://www.instagram.com/healthy.food.manger.sain/">@healthy.food.manger.sain</a></p>
+<p class="fine">Paiement sécurisé par Payhip. Les calories sont des estimations par portion et ne constituent pas un avis médical.</p>
+</div>
+</footer>
+
+<div class="sticky"><div><b>24,99 € TTC</b><br><span class="muted">Pack Complet, 45 recettes</span></div><a class="btn" href="https://payhip.com/b/61luL">Acheter</a></div>
+
+<script>
+// ============ À MODIFIER ICI ============
+// 1) Lien d'avis Google : colle ton lien entre les guillemets pour afficher le bouton « Laisser un avis Google ».
+const GOOGLE_REVIEW_URL = "";
+// 2) Photos de tes plats : ajoute une ligne par photo, avec le nom du plat en minuscules sans accent.
+//    Exemple : "salade-avocat-feta": "photos/salade-avocat-feta.jpg",
+const PHOTOS = {
+};
+// ========================================
+(function () {
+  if (GOOGLE_REVIEW_URL) {
+    var a = document.createElement("a");
+    a.className = "btn";
+    a.href = GOOGLE_REVIEW_URL;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Laisser un avis Google";
+    var box = document.getElementById("avis-actions");
+    box.insertBefore(a, box.firstChild);
+  }
+  document.querySelectorAll(".tile[data-slug]").forEach(function (t) {
+    var url = PHOTOS[t.getAttribute("data-slug")];
+    if (!url) return;
+    var img = new Image();
+    img.onload = function () { t.style.backgroundImage = "url('" + url + "')"; t.classList.add("has-photo"); };
+    img.src = url;
+  });
+  var p = document.getElementById("pack-img");
+  var test = new Image();
+  test.onload = function () { p.style.backgroundImage = "url('" + test.src + "')"; p.textContent = ""; };
+  test.src = "https://images.unsplash.com/photo-1546069901-ba959f25e597?w=900&q=80";
+})();
+</script>
+</body>
+</html>
