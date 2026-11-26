@@ -1,0 +1,31 @@
+HEALTHY FOOD — VERSION GITHUB PAGES v6
+======================================
+
+CONTENU
+- index.html : page d’accueil et boutique
+- mentions-legales.html, cgv.html, politique-confidentialite.html
+- css/, fonts/, images/ : ressources du site
+
+MISE EN LIGNE (GitHub depuis un ordinateur ou un téléphone)
+1. Décompressez ce ZIP.
+2. Ouvrez le dépôt https://github.com/yallouche90-beep/HEALTHY-FOOD
+3. Téléversez le CONTENU du dossier décompressé à la racine du dépôt (pas le ZIP lui-même).
+4. Validez avec Commit changes.
+5. Dans Settings > Pages : Deploy from a branch, branche main, dossier /(root).
+6. Attendez la fin du déploiement puis ouvrez :
+   https://yallouche90-beep.github.io/HEALTHY-FOOD/
+
+LIENS PAYHIP INTÉGRÉS
+- Entrées : https://payhip.com/b/2RVia
+- Plats : https://payhip.com/b/HqhO7
+- Desserts : https://payhip.com/b/kLK5z
+- Pack complet : https://payhip.com/b/61luL
+
+PRIX AFFICHÉS
+- Chaque ebook individuel : 7,90 €
+- Pack complet : 24,90 €
+
+IMPORTANT AVANT D’OUVRIR LES VENTES
+La page Mentions légales contient encore des champs entre crochets (identité, statut, adresse, SIRET, téléphone et directeur de publication). Ils doivent être complétés avec des informations exactes et adaptées à votre situation. Ne publiez pas les mentions légales incomplètes.
+Le prix du pack (24,90 €) est supérieur à l’achat des trois ebooks séparément (23,70 €). Je l’ai conservé car c’est le prix que vous avez indiqué, mais il faut vérifier que c’est bien volontaire.
+Le site affiche l’adresse email fournie : yvotchotcho@yahoo.fr.

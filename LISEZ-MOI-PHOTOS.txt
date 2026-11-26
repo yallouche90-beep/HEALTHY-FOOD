@@ -1,0 +1,14 @@
+HEALTHY FOOD MANGER SAIN — VERSION AVEC PHOTOS
+================================================
+
+Cette version contient les 11 photos des plats présentés et une image de sélection pour le visuel général. Les images ont été créées spécialement pour cette maquette et sont intégrées dans images/plats/.
+
+INSTALLATION SUR NETLIFY
+1. Décompressez ce ZIP sur votre ordinateur.
+2. Vérifiez que index.html, css/, fonts/, images/ et les 3 pages légales sont tous dans le même dossier racine.
+3. Déposez le contenu complet de ce dossier dans Netlify (pas uniquement index.html).
+
+IMPORTANT AVANT DE VENDRE
+- Les photos sont des visuels illustratifs générés par IA : elles représentent les plats annoncés, mais ne sont pas des photos de recettes réellement préparées.
+- Vérifiez que chaque ebook téléchargeable contient bien les recettes, ingrédients, étapes et valeurs nutritionnelles annoncés.
+- Vérifiez les coordonnées de contact, les mentions légales/CGV, le lien Payhip et le parcours de paiement avant ouverture commerciale.
